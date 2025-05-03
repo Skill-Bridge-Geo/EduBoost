@@ -6,6 +6,8 @@ import mongoose from 'mongoose'
 
 // Routers
 import registerRoute from './Routes/register-router.js'
+import loginRouter from './Routes/login-router.js'
+import logoutRouter from './Routes/logout-router.js'
 
 // Environment variables
 dotenv.config()
@@ -27,6 +29,8 @@ const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 
 // Routes to access
 app.use('/register', registerRoute)
+app.use('/login', loginRouter)
+app.use('/logout', logoutRouter)
 
 // Database connection
 mongoose
