@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
 // Routers
-import registerRoute from './Routes/register-route.js'
+import registerRoute from './Routes/register-router.js'
 
 // Environment variables
 dotenv.config()
