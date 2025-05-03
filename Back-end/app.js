@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
 // Routers
-
+import registerRoute from './Routes/register-route.js'
 
 // Environment variables
 dotenv.config()
@@ -26,7 +26,7 @@ app.use(cookieParser())
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ebuqkja.mongodb.net/`
 
 // Routes to access
-
+app.use('/register', registerRoute)
 
 // Database connection
 mongoose
