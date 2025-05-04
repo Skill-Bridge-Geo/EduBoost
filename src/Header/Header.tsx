@@ -12,9 +12,11 @@ export default function Header() {
     <>
       <header>
         <div className="left-side-wrap">
-          <img className="hamburger-icon" src={hamburger} alt="menu icon" />
-          <img className="logo-icon" src={logo} alt="Logo" />
-          <h3 className="company-name">MyCourse.io</h3>
+          <div className="company-info-wrap">
+            <img className="hamburger-icon" src={hamburger} alt="menu icon" />
+            <img className="logo-icon" src={logo} alt="Logo" />
+            <h3 className="company-name">MyCourse.io</h3>
+          </div>
           <div className="browse-div">
             <span className="browse-text">Browse</span>
             <img src={arrow} alt="expand more icon" />
@@ -29,6 +31,7 @@ export default function Header() {
           <img className="icon-search" src={search} alt="search icon" />
         </div>
         <div className="right-side-wrap">
+          <span className="offer-text">Become Instructor</span>
           <img className="icon-cart" src={cart} alt="cart icon" />
           <img
             className="icon-notifications"
