@@ -1,10 +1,10 @@
-import React from 'react'
+
 import "./footer.css"
 
 export default function Footer() {
   return (
-    <div className='mainDiv'>
-      <div className='parentDiv'>
+    <footer className='footer'>
+      <section className='firstSection'>
         <img className='logo' src='./Logo.png' alt='courses logo' />
         <div className='coursesWrapper'>
           <div className='courses'>
@@ -24,16 +24,16 @@ export default function Footer() {
             <p>Video Making</p>
           </div>
         </div>
-      </div>
+      </section>
       <hr className='hr' />
-      <div className='contactInfo'>
+      <div className='secondSection'>
         <h3>Copyright © MyCourse.io 2024. All Rights Reserved</h3>
         <div className='socials'>
-          <img src='./Twitter.svg' alt='' />
-          <img src='./Instagram.svg' alt='' />
-          <img src='./Facebook.svg' alt='' />
+          <img src='./Twitter.svg' alt='Twitter logo' />
+          <img src='./Instagram.svg' alt='Instagram logo' />
+          <img src='./Facebook.svg' alt='Facebook logo' />
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
