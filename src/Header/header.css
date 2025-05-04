@@ -1,0 +1,34 @@
+h1 {
+  font-family: "Gilroy-Bold";
+}
+
+header {
+  padding: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.left-side-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-icon {
+  width: 3.7rem;
+}
+
+.company-name {
+  font-size: 1.5rem;
+}
+
+.icon-notifications,
+.icon-cart {
+  width: 2rem;
+}
+
+.right-side-wrap {
+  display: flex;
+  gap: 1.6rem;
+}
