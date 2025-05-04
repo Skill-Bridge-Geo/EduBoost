@@ -32,3 +32,60 @@ header {
   display: flex;
   gap: 1.6rem;
 }
+
+.input-div {
+  display: none;
+}
+
+.browse-div {
+  display: none;
+}
+
+.avatar {
+  display: none;
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 48rem) {
+  .input-div {
+    display: block;
+    position: relative;
+  }
+
+  .search-input {
+    width: 40rem;
+    background-color: #f9f9f9e5;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
+
+  .browse-div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: 3.2rem;
+  }
+
+  .browse-text {
+    font-family: "Gilroy-Light";
+    color: #1b1b1b;
+    font-size: 1.6rem;
+  }
+
+  .avatar {
+    display: block;
+  }
+}
