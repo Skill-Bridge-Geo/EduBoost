@@ -26,7 +26,7 @@ export default function Footer() {
       </section>
       <hr className='hr' />
       <div className='secondSection'>
-        <h3>Copyright © MyCourse.io 2024. All Rights Reserved</h3>
+        <h3 className="copyright">Copyright © MyCourse.io 2024. All Rights Reserved</h3>
         <div className='socials'>
           <img src='./Twitter.svg' alt='Twitter logo' />
           <img src='./Instagram.svg' alt='Instagram logo' />

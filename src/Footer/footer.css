@@ -6,13 +6,12 @@
 
 body {
   background-color: #1b1b1b;
-  padding: 35px 10px;
+  padding: 25px 10px;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .firstSection {
@@ -20,11 +19,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .logo {
-  padding: 0;
   width: 123px;
   height: 34px;
 }
@@ -80,7 +78,7 @@ img {
 
 @media (min-width: 768px) {
   footer {
-    padding: 40px 30px 0;
+    padding: 0px 20px 0;
   }
   .firstSection {
     display: flex;
@@ -90,9 +88,69 @@ img {
     gap: 85px;
   }
   p {
-    font-size: 18px;
+    font-size: 1rem;
   }
   .coursesWrapper {
-    gap: 35px;
+    gap: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      padding: 40px 50px;
+    }
+    footer {
+      padding: px;
+    }
+    .firstSection {
+      gap: 110px;
+    }
+    .coursesWrapper {
+      gap: 80px;
+    }
+    p {
+      font-size: 20px;
+    }
+    .courses {
+      gap: 1rem;
+    }
+    .logo {
+      width: 170px;
+      height: 45px;
+    }
+    img {
+      width: 35px;
+    }
+    .socials {
+      gap: 25px;
+    }
+
+    .copyright {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: 1440px) {
+    body {
+      padding: 45px 100px;
+    }
+    .firstSection {
+      gap: 168px;
+    }
+
+    .coursesWrapper {
+      gap: 110px;
+    }
+    p {
+      font-size: 22px;
+    }
+    .copyright {
+      font-size: 22px;
+    }
+    .logo {
+      width: 200px;
+      height: 55px;
+    }
+    img {
+      width: 40px;
+    }
   }
 }
