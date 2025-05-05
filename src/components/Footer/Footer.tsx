@@ -1,5 +1,8 @@
 import Logo from "../../assets/Logo.png";
 import "./footer.css";
+import FacebookIcon from "../../assets/Facebook.svg";
+import TwitterIcon from "../../assets/Twitter.svg";
+import InstagramIcon from "../../assets/Instagram.svg";
 
 export default function Footer() {
   return (
@@ -31,9 +34,9 @@ export default function Footer() {
           Copyright © MyCourse.io 2024. All Rights Reserved
         </h3>
         <div className='socials'>
-          <img src='./Twitter.svg' alt='Twitter logo' />
-          <img src='./Instagram.svg' alt='Instagram logo' />
-          <img src='./Facebook.svg' alt='Facebook logo' />
+          <img src={TwitterIcon} alt='Twitter logo' />
+          <img src={InstagramIcon} alt='Instagram logo' />
+          <img src={FacebookIcon} alt='Facebook logo' />
         </div>
       </div>
     </footer>
