@@ -5,14 +5,13 @@ import {
   Route,
 } from "react-router-dom";
 import "./App.css";
-
 const Home = React.lazy(() => import("./components/Home/Home"));
-
 function App() {
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
+        {/* <Route path='/Login' element={<Login />} /> */}
       </Routes>
     </Router>
   );
