@@ -6,12 +6,13 @@
 
 body {
   background-color: #1b1b1b;
-  padding: 25px 10px;
 }
 
-.footer {
+footer {
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
+  margin: 25px 0;
 }
 
 .firstSection {
@@ -78,7 +79,7 @@ img {
 
 @media (min-width: 768px) {
   footer {
-    padding: 0px 20px 0;
+    padding: 0 30px;
   }
   .firstSection {
     display: flex;
@@ -95,11 +96,9 @@ img {
   }
 
   @media (min-width: 1024px) {
-    body {
-      padding: 40px 50px;
-    }
     footer {
-      padding: px;
+      padding: 0 50px;
+      margin: 40px 0;
     }
     .firstSection {
       gap: 110px;
@@ -123,14 +122,18 @@ img {
     .socials {
       gap: 25px;
     }
+    .secondSection {
+      padding: 0 30px;
+    }
 
     .copyright {
       font-size: 20px;
     }
   }
   @media (min-width: 1440px) {
-    body {
-      padding: 45px 100px;
+    footer {
+      padding: 0 100px;
+      margin: 45px 0;
     }
     .firstSection {
       gap: 168px;
@@ -141,6 +144,9 @@ img {
     }
     p {
       font-size: 22px;
+    }
+    .secondSection {
+      padding: 0 45px;
     }
     .copyright {
       font-size: 22px;

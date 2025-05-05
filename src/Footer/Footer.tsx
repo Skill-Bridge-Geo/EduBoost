@@ -2,7 +2,7 @@ import "./footer.css";
 
 export default function Footer() {
   return (
-    <footer className='footer'>
+    <footer>
       <section className='firstSection'>
         <img className='logo' src='./Logo.png' alt='courses logo' />
         <div className='coursesWrapper'>
