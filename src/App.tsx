@@ -4,23 +4,17 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
-import Footer from "./Footer/Footer";
-
+import "./App.css";
 const Home = React.lazy(() => import("./components/Home/Home"));
-
 function App() {
   return (
-    <>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        {/* <Route path='/Login' element={<Login />} /> */}
+      </Routes>
+    </Router>
   );
 }
-<Router>
-  <Routes>
-    <Route path='/' element={<Home />} />
-    {/* <Route path='/Login' element={<Login />} /> */}
-  </Routes>
-</Router>;
 
 export default App;
