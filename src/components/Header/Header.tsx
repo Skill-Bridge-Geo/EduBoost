@@ -1,11 +1,11 @@
 import "./header.css";
-import hamburger from "/hamburger.svg";
-import logo from "/Logo.svg";
-import cart from "/icon-shopping-cart.svg";
-import notifications from "/icon-notifications.svg";
-import search from "/icon-search.svg";
-import arrow from "/icon-arrow.svg";
-import avatar from "/avatar.png";
+import hamburger from "../../assets/hamburger.svg";
+import logo from "../../assets/Logo.svg";
+import cart from "../../assets/icon-shopping-cart.svg";
+import notifications from "../../assets/icon-notifications.svg";
+import search from "../../assets/icon-search.svg";
+import arrow from "../../assets/icon-arrow.svg";
+import avatar from "../../assets/avatar.png";
 
 export default function Header() {
   return (

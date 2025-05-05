@@ -1,10 +1,11 @@
+import Logo from "../../assets/Logo.png";
 import "./footer.css";
 
 export default function Footer() {
   return (
     <footer className='footer'>
       <section className='firstSection'>
-        <img className='logo' src='./Logo.png' alt='courses logo' />
+        <img className='logo' src={Logo} alt='courses logo' />
         <div className='coursesWrapper'>
           <div className='courses'>
             <p>Web Programming</p>

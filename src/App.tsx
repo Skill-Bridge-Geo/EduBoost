@@ -1,20 +1,16 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
 import "./App.css";
-const Home = React.lazy(() => import("./components/Home/Home"));
+import { Outlet } from "react-router-dom";
+const Header = React.lazy(() => import("./components/Header/Header"));
+const Footer = React.lazy(() => import("./components/Footer/Footer"));
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        {/* <Route path='/Login' element={<Login />} /> */}
-      </Routes>
-    </Router>
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
   );
 }
 
