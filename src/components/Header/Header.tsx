@@ -48,7 +48,7 @@ export default function Header() {
           <img src={avatar} alt="avatar" className="avatar" />
         </div>
 
-        {/* <div className="login_button-container">
+        {/* <div className="login_button_container">
           <button onClick={toggleLogin}>Log In</button>
           {isLoginOpen && <Login />}
         </div> */}
