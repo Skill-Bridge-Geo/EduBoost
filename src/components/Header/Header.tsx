@@ -11,12 +11,12 @@ import avatar from "../../assets/avatar.png";
 import iconSignUp from "../../assets/icon-sign-up.svg";
 
 export default function Header() {
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  // const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const toggleLogin = () => {
-    setIsLoginOpen(!isLoginOpen);
-  };
+  // const toggleLogin = () => {
+  //   setIsLoginOpen(!isLoginOpen);
+  // };
   return (
     <>
       <header>
@@ -52,7 +52,11 @@ export default function Header() {
           </div>
         ) : (
           <div className="right-side-wrap-logged-out">
-            <button className="log-in-button">Login</button>
+            <button
+              onClick={() => setIsLoggedIn(!isLoggedIn)}
+              className="log-in-button">
+              Login
+            </button>
             <button className="sign-up-button">
               <img
                 className="sign-up-icon"

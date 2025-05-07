@@ -50,6 +50,7 @@ header {
 .icon-notifications,
 .icon-cart {
   width: 2rem;
+  cursor: pointer;
 }
 
 .right-side-wrap {
@@ -167,6 +168,7 @@ header {
 
   .avatar {
     display: block;
+    cursor: pointer;
   }
 
   .log-in-button,
