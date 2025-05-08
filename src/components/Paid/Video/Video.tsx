@@ -9,10 +9,10 @@ import batteryIcon from "../../../assets/Battery.svg";
 import checkedIcon from "../../../assets/checked.svg";
 import signedIcon from "../../../assets/signed.svg";
 import Header from "../../Header/Header";
+import Questions from "../Questions/Questions";
 
 export default function Video() {
   const [data, setData] = useState<CourseData | null>(null);
-
 
   useEffect(() => {
     axios
@@ -70,8 +70,7 @@ export default function Video() {
         </section>
       </section>
       <section className='second-child'>
-      
-        <h1>axsasx</h1>
+        <Questions />
       </section>
     </div>
   );

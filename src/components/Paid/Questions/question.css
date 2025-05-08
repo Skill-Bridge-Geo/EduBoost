@@ -1,0 +1,33 @@
+.questions-parent {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  width: 400px;
+align-items: center;
+justify-content: center;
+}
+.chapter-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.chapter-title {
+    font-size: 1rem;
+}
+.quest-answ-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow-icon {
+    transition: 0.2s;
+}
+.arrow-rotated {
+    transform: rotate(180deg);
+}

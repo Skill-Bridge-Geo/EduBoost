@@ -93,7 +93,7 @@
 
 @media (min-width: 768px) {
   .parent {
-    flex-direction: row;
+    /* flex-direction: row; */
     .mobileTools {
       display: none;
     }
