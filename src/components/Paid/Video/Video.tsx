@@ -13,6 +13,7 @@ import Questions from "../Questions/Questions";
 
 export default function Video() {
   const [data, setData] = useState<CourseData | null>(null);
+  const [isSelected, setIsSelected] = useState<string>("Courses");
 
   useEffect(() => {
     axios
@@ -70,6 +71,35 @@ export default function Video() {
         </section>
       </section>
       <section className='second-child'>
+        <div className='course-info-cont'>
+          <div className='course-info'>
+            <p
+              className={`${
+                isSelected === "Courses" ? "selected" : ""
+              }`}
+              onClick={() => setIsSelected("Courses")}
+            >
+              Courses
+            </p>
+            <p
+              className={`${
+                isSelected === "Review" ? "selected" : ""
+              }`}
+              onClick={() => setIsSelected("Review")}
+            >
+              Review
+            </p>
+            <p
+              className={`${
+                isSelected === "About" ? "selected" : ""
+              }`}
+              onClick={() => setIsSelected("About")}
+            >
+              About
+            </p>
+          </div>
+          <hr />
+        </div>
         <Questions />
       </section>
     </div>

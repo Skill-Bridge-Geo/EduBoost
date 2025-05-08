@@ -63,10 +63,11 @@
   font-weight: 400;
   line-height: 15px;
 }
+
 .detailed-raitings {
   display: flex;
   gap: 8px;
-  color: var(--Object-Black-60, rgba(27, 27, 27, 0.6));
+  color: rgba(27, 27, 27, 0.6);
   font-family: Gilroy;
   font-size: 1rem;
   font-style: normal;
@@ -90,18 +91,41 @@
 .second-child {
   padding: 0 16px;
 }
-
-@media (min-width: 768px) {
-  .parent {
-    /* flex-direction: row; */
-    .mobileTools {
-      display: none;
-    }
-    .header {
-      display: block;
-    }
-    .video-container {
-
-    }
-  }
+.course-info-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1rem;
 }
+.course-info {
+  display: flex;
+  gap: 20px;
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.selected {
+  color: var(--Object-Black-90, rgba(27, 27, 27, 0.9));
+  font-weight: 700;
+}
+
+hr {
+  border: 0;
+  border-top: solid;
+  opacity: 0.04;
+}
+
+/* @media (min-width: 768px) {
+  .parent {
+  }
+  .mobileTools {
+    display: none;
+  }
+  .header {
+    display: block;
+  }
+  .video-container {
+  }
+} */
