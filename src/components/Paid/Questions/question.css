@@ -37,14 +37,12 @@
   transform: rotate(180deg);
 }
 .chapter-details {
-    padding:0px 12px ;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   overflow: hidden;
-  transition: height 0.3s ease;
-  background: rgba(249, 249, 249, 0.90);
+  overflow: hidden;
+  transition: height 0.3s ease, padding 0.3s ease-in-out;
 
-}
-.showDetails {
-  max-height: 200px; /* Adjust to fit real content height */
-  opacity: 1;
-  padding: 20px 50px; /* Only show vertical padding when open */
+  background: rgba(249, 249, 249, 0.9);
 }

@@ -1,5 +1,5 @@
 import { Chapter } from "../../../types";
-import { useState,useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 
 import arrowIcon from "../../../assets/arrowIcon.png";
@@ -54,8 +54,11 @@ export default function QuestionAnswerDiv({
         />
       </div>
       <div
-        className='chapter-details'
-        style={{ height }}
+        className={`chapter-details ${isActive ? "showAnswer" : ""}`}
+        style={{
+          height,
+          padding: isActive ? "15px" : "0px",
+        }}
         ref={contentRef}
       >
         <p>1</p>
