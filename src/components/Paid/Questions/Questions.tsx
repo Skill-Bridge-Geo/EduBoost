@@ -17,7 +17,7 @@ export default function Questions() {
   }, []);
 
   return (
-    <div className='questions-parent'>
+    <div className='Parent'>
       {data?.chapters.map((chapter, index) => (
         <QuestionAnswerDiv
           key={index}
@@ -30,3 +30,4 @@ export default function Questions() {
     </div>
   );
 }
+

@@ -1,33 +1,50 @@
-.questions-parent {
+.Parent {
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 10px 12px;
   border-radius: 10px;
-  width: 400px;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .chapter-child {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-
 
 .chapter-title {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .quest-answ-parent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.question-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 12px;
 }
 .arrow-icon {
-    transition: 0.2s;
+  transition: 0.4s;
+  width: 30px;
+  height: 30px;
 }
 .arrow-rotated {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.chapter-details {
+    padding:0px 12px ;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  background: rgba(249, 249, 249, 0.90);
+
+}
+.showDetails {
+  max-height: 200px; /* Adjust to fit real content height */
+  opacity: 1;
+  padding: 20px 50px; /* Only show vertical padding when open */
 }

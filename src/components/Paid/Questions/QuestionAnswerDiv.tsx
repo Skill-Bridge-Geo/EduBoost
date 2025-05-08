@@ -1,4 +1,5 @@
 import { Chapter } from "../../../types";
+import { useState,useEffect,useRef } from "react";
 import React from "react";
 
 import arrowIcon from "../../../assets/arrowIcon.png";
@@ -17,27 +18,51 @@ export default function QuestionAnswerDiv({
   activeIndex,
   setActiveIndex,
 }: QuestionProps) {
-    const isActive=activeIndex ===index
-      const toggleAccordion = () => {
-        setActiveIndex(isActive ? null : index);
-      };
+  const isActive = activeIndex === index;
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState("0px");
+
+  useEffect(() => {
+    if (contentRef.current) {
+      if (isActive) {
+        setHeight(`${contentRef.current.scrollHeight}px`);
+      } else {
+        setHeight("0px");
+      }
+    }
+  }, [isActive]);
+
+  const toggleAccordion = () => {
+    setActiveIndex(isActive ? null : index);
+  };
+
   return (
-    <div
-      onClick={toggleAccordion}
-      className='quest-answ-parent'
-    >
-      <div className='chapter-child'>
-        <h3 className='chapter-title'>{chapter.title}</h3>
-        <p>
-          1/{chapter.videosCount} <img src={dotIcon} alt='dot icon' />{" "}
-          <span>{chapter.duration}</span>
-        </p>
+    <div className='quest-answ-parent'>
+      <div onClick={toggleAccordion} className='question-arrow'>
+        <div className='chapter-child'>
+          <h3 className='chapter-title'>{chapter.title}</h3>
+          <p>
+            1/{chapter.videosCount}{" "}
+            <img src={dotIcon} alt='dot icon' />{" "}
+            <span>{chapter.duration}</span>
+          </p>
+        </div>
+        <img
+          className={`arrow-icon ${isActive ? "arrow-rotated" : ""}`}
+          src={arrowIcon}
+          alt='arrow icon'
+        />
       </div>
-      <img
-        className={`arrow-icon ${isActive? "arrow-rotated" : ""}`}
-        src={arrowIcon}
-        alt='arrow icon'
-      />
+      <div
+        className='chapter-details'
+        style={{ height }}
+        ref={contentRef}
+      >
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+      </div>
     </div>
   );
 }
