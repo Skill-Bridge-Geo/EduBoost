@@ -41,10 +41,10 @@ export default function QuestionAnswerDiv({
       <div onClick={toggleAccordion} className='question-arrow'>
         <div className='chapter-child'>
           <h3 className='chapter-title'>{chapter.title}</h3>
-          <p>
-            1/{chapter.videosCount}{" "}
+          <p className="chapter-details-info">
+            <p>1/<span>{chapter.videos.length} Videos</span></p>
             <img src={dotIcon} alt='dot icon' />{" "}
-            <span>{chapter.duration}</span>
+            <span className="total-duration">{chapter.totalDuration}</span>
           </p>
         </div>
         <img
