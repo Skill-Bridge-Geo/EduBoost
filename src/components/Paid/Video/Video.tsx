@@ -1,6 +1,7 @@
 import "./video.css";
 import { useEffect, useState } from "react";
 import { CourseData } from "../../../types"; // I
+import VideoPlayer from "./VideoPlayer";
 
 import axios from "axios";
 import connectionIocn from "../../../assets/Cellular Connection.png";
@@ -39,14 +40,7 @@ export default function Video() {
           </div>
         </div>
         <div className='video-container'>
-          <iframe
-            width='100%'
-            height='212px'
-            src={data.course.video.url}
-            title='Course Video'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          ></iframe>
+          <VideoPlayer />
         </div>
 
         <section className='course-raitings'>
@@ -71,7 +65,7 @@ export default function Video() {
         </section>
       </section>
       <section className='second-child'>
-        <div className='course-info-cont'>
+        <div className='course-info-wrapper'>
           <div className='course-info'>
             <p
               className={`${
@@ -98,7 +92,19 @@ export default function Video() {
               About
             </p>
           </div>
-          <hr />
+          <div className='underline-container'>
+            <div
+              className='tab-underline'
+              style={{
+                transform:
+                  isSelected === "Courses"
+                    ? "translateX(0%)"
+                    : isSelected === "Review"
+                    ? "translateX(126%)"
+                    : "translateX(256%)",
+              }}
+            ></div>
+          </div>
         </div>
         <Questions />
       </section>
