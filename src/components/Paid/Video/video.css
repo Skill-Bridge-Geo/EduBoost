@@ -1,0 +1,144 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  margin: 14px 0 74px;
+}
+.header {
+  display: none;
+}
+
+.mobileTools {
+  display: flex;
+  align-items: center;
+  padding: 0 15px 0 25px;
+  justify-content: space-between;
+}
+.mobileTools p {
+  color: #000;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.3px;
+  font-family: Gilroy;
+}
+.tools {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.video-container {
+  padding: 11px 0 0px;
+}
+.course-raitings {
+  padding: 19px 16px 29px 16px;
+}
+.course-raitings h2 {
+  color: #000;
+  font-family: Gilroy;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 21px;
+}
+.studio-container {
+  padding: 19px 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.studioName {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.studioName p {
+  color: #3dcbb1;
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 16px;
+}
+.studioName span {
+  color: rgba(27, 27, 27, 0.6);
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.detailed-raitings {
+  display: flex;
+  gap: 8px;
+  color: rgba(27, 27, 27, 0.6);
+  font-family: Gilroy;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+.check img {
+  width: 19px;
+  height: 19px;
+}
+.sign img {
+  width: 19px;
+  height: 19px;
+}
+.check,
+.sign {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.second-child {
+  padding: 0 16px;
+}
+.course-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.course-info {
+  display: flex;
+
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 18px;
+}
+.course-info p {
+  font-size: 16px;
+  transition: font-size 0.9s ease, color 0.3s ease;
+  min-width: 75px;
+  cursor: pointer;
+}
+
+.course-info p.selected {
+  font-weight: 600;
+  color: #000;
+}
+
+.underline-container {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  margin-top: 4px;
+}
+.tab-underline {
+  height: 1.5px;
+  width: 56px;
+  background-color: rgb(83, 209, 83);
+  transition: transform 0.3s ease;
+}
+
+/* @media (min-width: 768px) {
+  .parent {
+  }
+  .mobileTools {
+    display: none;
+  }
+  .header {
+    display: block;
+  }
+  .video-container {
+  }
+} */

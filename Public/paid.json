@@ -1,0 +1,107 @@
+{
+  "course": {
+    "coverSubtitle": "Vue JavaScript Course",
+    "title": "Vue JS Scratch Course",
+    "author": "Kitani Studio",
+    "studioType": "Design Studio",
+
+    "views": 2300,
+    "likes": 1400,
+    "video": {
+      "duration": "59:00",
+      "currentTime": "12:00",
+      "url": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    "description": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries."
+  },
+  "reviews": [
+    {
+      "name": "Leonardo Da Vinci",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Leonardo+Da+Vinci",
+      "comment": "Loved the course. I've learned some very subtle techniques."
+    },
+    {
+      "name": "Titania S",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Titania+S",
+      "comment": "I loved the course, it had been a long time since I had experimented with watercolors and now I will do it more often thanks to Kitani Studio."
+    },
+    {
+      "name": "Zhrikov",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Zhrikov",
+      "comment": "Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher."
+    },
+    {
+      "name": "Miphisaka",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Miphisaka",
+      "comment": "I haven't finished the course yet, as I would like to have some feedback from the teacher, about the comments I shared on the forum 3 months ago, and I still haven't had any answer. I think the course is well structured, however the explanations and videos are very quick for beginners. However, it is good to go practicing."
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Chapter 1: Course Overview",
+      "totalVideos": 12,
+      "watchedVideos": 1,
+      "totalDuration": "28m",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Installing Vue JS",
+          "duration": 600,
+          "status": "completed",
+          "videoUrl": "https://www.example.com/video1.mp4"
+        },
+        {
+          "id": 2,
+          "title": "Understand Vue Components",
+          "duration": 3540,
+          "status": "playing",
+          "videoUrl": "https://www.example.com/video2.mp4"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Chapter 2: Curriculum",
+      "totalVideos": 12,
+      "watchedVideos": 1,
+      "totalDuration": "1h 28m",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Vue Templating",
+          "duration": 720,
+          "status": "locked",
+          "videoUrl": "https://www.example.com/video3.mp4"
+        },
+        {
+          "id": 2,
+          "title": "Vue Forms",
+          "duration": 1380,
+          "status": "locked",
+          "videoUrl": "https://www.example.com/video4.mp4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Chapter 3: Components",
+      "totalVideos": 12,
+      "watchedVideos": 0,
+      "totalDuration": "1h 28m",
+      "videos": [
+        {
+          "id": 1,
+          "title": "Component Basics",
+          "duration": 900,
+          "status": "locked",
+          "videoUrl": "https://www.example.com/video5.mp4"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+.Parent {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.chapter-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chapter-details-info {
+    display: flex;
+    gap: 5px;
+    color: rgba(27, 27, 27, 0.60);
+
+}
+.total-duration {
+    color: #3DCBB1;
+}
+
+.chapter-title {
+  font-size: 1rem;
+}
+.quest-answ-parent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.question-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 12px;
+}
+.arrow-icon {
+  transition: 0.4s;
+  width: 30px;
+  height: 30px;
+}
+.arrow-rotated {
+  transform: rotate(180deg);
+}
+.chapter-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  overflow: hidden;
+  transition: height 0.3s ease, padding 0.3s ease-in-out;
+  background: rgba(249, 249, 249, 0.9);
+}
