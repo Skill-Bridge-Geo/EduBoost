@@ -1,0 +1,112 @@
+{
+  "course": {
+    "coverSubtitle": "Vue JavaScript Course",
+    "title": "Vue JS Scratch Course",
+    "author": "Kitani Studio",
+    "studioType": "Design Studio",
+    "views": 2300,
+    "likes": 1400,
+    "video": {
+      "duration": "59:00",
+      "currentTime": "12:00",
+      "url": "https://www.youtube.com/embed/FXpIoQ_rT_c"
+    },
+    "description": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries."
+  },
+  "reviews": [
+    {
+      "name": "Leonardo Da Vinci",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Leonardo+Da+Vinci",
+      "comment": "Loved the course. I've learned some very subtle techniques."
+    },
+    {
+      "name": "Titania S",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Titania+S",
+      "comment": "I loved the course, it had been a long time since I had experimented with watercolors and now I will do it more often thanks to Kitani Studio."
+    },
+    {
+      "name": "Zhrikov",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Zhrikov",
+      "comment": "Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher."
+    },
+    {
+      "name": "Miphisaka",
+      "time": "Today",
+      "avatar": "https://ui-avatars.com/api/?name=Miphisaka",
+      "comment": "I haven't finished the course yet, as I would like to have some feedback from the teacher, about the comments I shared on the forum 3 months ago, and I still haven't had any answer. I think the course is well structured, however the explanations and videos are very quick for beginners. However, it is good to go practicing."
+    }
+  ],
+  "chapters": [
+    {
+      "title": "Chapter 1: Course Overview",
+      "videosCount": 12,
+      "duration": "28m",
+      "videos": [
+        {
+          "title": "Course Overview",
+          "duration": "28m",
+          "status": "completed",
+          "url": "https://www.youtube.com/embed/nhBVL41-_Cw"
+        }
+      ]
+    },
+    {
+      "title": "Chapter 2: Curriculum",
+      "videosCount": 12,
+      "duration": "1h 28m",
+      "videos": [
+        {
+          "title": "Installing Vue JS",
+          "duration": "10m",
+          "status": "completed",
+          "url": "https://www.youtube.com/embed/nhBVL41-_Cw"
+        },
+        {
+          "title": "Understand Vue Components",
+          "duration": "59m",
+          "status": "playing",
+          "url": "https://www.youtube.com/embed/6c8VZgk2CuU"
+        },
+        {
+          "title": "Vue Templating",
+          "duration": "12m",
+          "status": "locked",
+          "url": "https://www.youtube.com/embed/0vVVyFIeVxQ"
+        },
+        {
+          "title": "Vue Forms",
+          "duration": "23m",
+          "status": "locked",
+          "url": "https://www.youtube.com/embed/LqZ8btD9bS8"
+        },
+        {
+          "title": "Vue Styling",
+          "duration": "57m",
+          "status": "locked",
+          "url": "https://www.youtube.com/embed/BltzNEhGHtQ"
+        },
+        {
+          "title": "Vue Routing",
+          "duration": "1h 30m",
+          "status": "locked",
+          "url": "https://www.youtube.com/embed/91OrlEARxXg"
+        },
+        {
+          "title": "Vue Animation",
+          "duration": "1h 19m",
+          "status": "locked",
+          "url": "https://www.youtube.com/embed/w1s_hj2fZpA"
+        }
+      ]
+    },
+    {
+      "title": "Chapter 3: Components",
+      "videosCount": 12,
+      "duration": "1h 28m",
+      "videos": []
+    }
+  ]
+}
