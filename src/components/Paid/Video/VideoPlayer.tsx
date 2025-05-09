@@ -23,10 +23,9 @@ export default function VideoPlayer() {
         ref={videoRef}
         controls
         width='100%'
-        height="100px"
+        height='100px'
         src='https://www.w3schools.com/html/mov_bbb.mp4'
       />
-     
     </div>
   );
 }
