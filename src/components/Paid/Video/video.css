@@ -91,7 +91,7 @@
 .second-child {
   padding: 0 16px;
 }
-.course-info-cont {
+.course-info-wrapper {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -99,22 +99,35 @@
 }
 .course-info {
   display: flex;
-  gap: 20px;
+
   color: rgba(27, 27, 27, 0.6);
   font-size: 1rem;
   font-weight: 400;
   line-height: 18px;
 }
-
-.selected {
-  color: var(--Object-Black-90, rgba(27, 27, 27, 0.9));
-  font-weight: 700;
+.course-info p {
+  font-size: 16px;
+  transition: font-size 0.9s ease, color 0.3s ease;
+  min-width: 75px;
+  cursor: pointer;
 }
 
-hr {
-  border: 0;
-  border-top: solid;
-  opacity: 0.04;
+.course-info p.selected {
+  font-weight: 600;
+  color: #000;
+}
+
+.underline-container {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  margin-top: 4px;
+}
+.tab-underline {
+  height: 1.5px;
+  width: 56px;
+  background-color: rgb(83, 209, 83);
+  transition: transform 0.3s ease;
 }
 
 /* @media (min-width: 768px) {

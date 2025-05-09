@@ -1,3 +1,19 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Gilroy-Medium", sans-serif;
+}
+
 h1 {
   font-family: "Gilroy-Bold";
 }
@@ -26,12 +42,15 @@ header {
 }
 
 .company-name {
+  font-family: "Gilroy-Bold";
   font-size: 1.5rem;
+  color: black;
 }
 
 .icon-notifications,
 .icon-cart {
   width: 2rem;
+  cursor: pointer;
 }
 
 .right-side-wrap {
@@ -55,6 +74,41 @@ header {
   display: none;
 }
 
+.right-side-wrap-logged-out {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.log-in-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.9rem;
+  background-color: transparent;
+  font-family: "Gilroy-Bold";
+  border: 1px solid #000;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sign-up-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.9rem;
+  background-color: transparent;
+  font-family: "Gilroy-Bold";
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #3dcbb1;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sign-up-icon {
+  width: 1.3rem;
+}
+
 /* Tablet */
 
 @media only screen and (min-width: 48rem) {
@@ -64,6 +118,10 @@ header {
 
   .left-side-wrap {
     gap: 1.6rem;
+  }
+
+  .right-side-wrap {
+    align-items: center;
   }
 
   .input-div {
@@ -84,6 +142,7 @@ header {
     right: 1.2rem;
     top: 50%;
     transform: translateY(-50%);
+    width: 2.1rem;
   }
 
   .hamburger-icon {
@@ -103,8 +162,22 @@ header {
     font-size: 1.6rem;
   }
 
+  .icon-arrow {
+    width: 0.97rem;
+  }
+
   .avatar {
     display: block;
+    cursor: pointer;
+  }
+
+  .log-in-button,
+  .sign-up-button {
+    font-size: 1.1rem;
+  }
+
+  .sign-up-icon {
+    width: 1.5rem;
   }
 }
 
@@ -113,11 +186,6 @@ header {
 @media only screen and (min-width: 90rem) {
   header {
     padding: 1.8rem 11.8rem;
-    background-color: transparent;
-  }
-
-  .right-side-wrap {
-    align-items: center;
   }
 
   .left-side-wrap {
@@ -138,5 +206,14 @@ header {
     cursor: pointer;
     font-size: 1.6rem;
     font-family: "Gilroy-Light";
+  }
+
+  .log-in-button,
+  .sign-up-button {
+    font-size: 1.2rem;
+  }
+
+  .sign-up-icon {
+    width: 1.6rem;
   }
 }
