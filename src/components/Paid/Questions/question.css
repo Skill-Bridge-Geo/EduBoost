@@ -12,6 +12,15 @@
   flex-direction: column;
   gap: 4px;
 }
+.chapter-details-info {
+    display: flex;
+    gap: 5px;
+    color: rgba(27, 27, 27, 0.60);
+
+}
+.total-duration {
+    color: #3DCBB1;
+}
 
 .chapter-title {
   font-size: 1rem;
