@@ -95,8 +95,7 @@ h3 {
 
   @media (min-width: 1024px) {
     footer {
-      padding: 0 50px;
-      margin: 40px 0;
+      padding:40px;
     }
     .firstSection {
       gap: 110px;
@@ -130,8 +129,8 @@ h3 {
   }
   @media (min-width: 1440px) {
     footer {
-      padding: 0 100px;
-      margin: 45px 0;
+      padding: 45px 100px;
+
     }
     .firstSection {
       gap: 168px;
