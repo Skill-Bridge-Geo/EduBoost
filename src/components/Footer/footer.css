@@ -4,15 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #1b1b1b;
-}
-
 footer {
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
-  margin: 25px 0;
+  padding: 25px 10px;
 }
 
 .firstSection {
@@ -73,7 +69,7 @@ h3 {
   gap: 7px;
 }
 
-img {
+.socials img {
   width: 20px;
 }
 
