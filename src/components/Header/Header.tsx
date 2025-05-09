@@ -7,16 +7,16 @@ import notifications from "../../assets/icon-notifications.svg";
 import search from "../../assets/icon-search.svg";
 import arrow from "../../assets/icon-arrow.svg";
 import avatar from "../../assets/avatar.png";
-// import Login from "../Login/Login";
+import Login from "../Login/Login";
 import iconSignUp from "../../assets/icon-sign-up.svg";
 
 export default function Header() {
-  // const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // const toggleLogin = () => {
-  //   setIsLoginOpen(!isLoginOpen);
-  // };
+  const toggleLogin = () => {
+    setIsLoginOpen(!isLoginOpen);
+  };
   return (
     <>
       <header>
@@ -53,10 +53,18 @@ export default function Header() {
         ) : (
           <div className="right-side-wrap-logged-out">
             <button
-              onClick={() => setIsLoggedIn(!isLoggedIn)}
-              className="log-in-button">
+              // onClick={() => setIsLoggedIn(!isLoggedIn)}
+              onClick={toggleLogin}
+              className="log-in-button"
+            >
               Login
             </button>
+            {isLoginOpen && (
+              <div className="login_modal_overlay">
+                {/* <Login/> */}
+                <Login onClose={() => setIsLoginOpen(false)} />
+              </div>
+            )}
             <button className="sign-up-button">
               <img
                 className="sign-up-icon"
