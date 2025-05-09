@@ -9,9 +9,9 @@ const PaidVideo=React.lazy(()=>import("./components/Paid/Video/Video"))
 function App() {
   return (
     <>
-      {/* <Header />
+      <Header />
       <Outlet />
-      <Footer /> */}
+      <Footer />
       <PaidVideo />
     </>
   );
