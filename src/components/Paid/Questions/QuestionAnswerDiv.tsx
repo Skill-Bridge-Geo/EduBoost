@@ -58,15 +58,13 @@ export default function QuestionAnswerDiv({
         />
       </div>
       <div
-        className={`chapter-details ${isActive ? "showAnswer" : ""}`}
+        className='chapter-details '
         style={{
           height,
           padding: isActive ? "15px" : "0px",
         }}
         ref={contentRef}
-      >
-        
-      </div>
+      ></div>
     </div>
   );
 }
