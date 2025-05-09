@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./App.css";
 import { Outlet } from "react-router-dom";
 const Header = React.lazy(() => import("./components/Header/Header"));

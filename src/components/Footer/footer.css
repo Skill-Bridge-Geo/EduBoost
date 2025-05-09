@@ -5,11 +5,12 @@
 }
 
 footer {
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
-  
   padding: 25px 10px;
   background-color: #1b1b1b;
+
 }
 
 .firstSection {
@@ -70,7 +71,7 @@ h3 {
   gap: 7px;
 }
 
-img {
+.socials img {
   width: 20px;
 }
 
