@@ -93,7 +93,7 @@ img {
 
   @media (min-width: 1024px) {
     footer {
-      padding:40px;
+      padding: 40px;
     }
     .firstSection {
       gap: 110px;
@@ -128,7 +128,6 @@ img {
   @media (min-width: 1440px) {
     footer {
       padding: 45px 100px;
-
     }
     .firstSection {
       gap: 168px;
