@@ -2,8 +2,8 @@ import "./video.css";
 import { useEffect, useState } from "react";
 import { CourseData } from "../../../types"; // I
 import VideoPlayer from "./VideoPlayer";
-
 import axios from "axios";
+
 import connectionIocn from "../../../assets/Cellular Connection.png";
 import wifiIcon from "../../../assets/Wifi.svg";
 import batteryIcon from "../../../assets/Battery.svg";
