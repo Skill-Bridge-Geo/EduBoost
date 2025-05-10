@@ -8,6 +8,7 @@ import mongoose from 'mongoose'
 import registerRoute from './Routes/register-router.js'
 import loginRouter from './Routes/login-router.js'
 import logoutRouter from './Routes/logout-router.js'
+import personalisationRouter from './Routes/personalisation-1-router.js'
 
 // Environment variables
 dotenv.config()
@@ -31,6 +32,7 @@ const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 app.use('/register', registerRoute)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
+app.use('/personalisation', personalisationRouter)
 
 // Database connection
 mongoose
