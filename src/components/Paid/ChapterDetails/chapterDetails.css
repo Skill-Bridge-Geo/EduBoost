@@ -1,4 +1,4 @@
-.videos{
+.videos {
   display: flex;
   flex-direction: column;
 }
@@ -8,6 +8,11 @@
 }
 
 .hr {
-  height: 1px;
-  color: green;
+  border: 0;
+  border-top: 1px solid #444;
+  opacity: 10%;
+}
+.title {
+    color:rgba(27, 27, 27, 0.60);
+    font-size:14px;
 }
