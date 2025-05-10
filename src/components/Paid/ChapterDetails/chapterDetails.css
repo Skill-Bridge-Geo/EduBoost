@@ -1,6 +1,13 @@
-.videos {
+.main {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .status-conatiner {
   display: flex;
@@ -16,3 +23,16 @@
   color: rgba(27, 27, 27, 0.6);
   font-size: 14px;
 }
+.completed {
+  background-color: #00ddc0;
+  color: white;
+  font-size: 1rem;
+  padding: 4px;
+}
+.uncompleted {
+  background-color: #FE416D;
+  color: white;
+  font-size: 1rem;
+  padding: 4px;
+}
+
