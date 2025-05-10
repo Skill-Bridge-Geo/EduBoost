@@ -22,7 +22,7 @@ export default function Questions() {
         <QuestionAnswerDiv
           key={index}
           chapter={chapter}
-          index={index + 1}
+          index={index}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
         />
