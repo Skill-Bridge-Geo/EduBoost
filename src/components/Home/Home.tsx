@@ -68,7 +68,7 @@ const Home = () => {
                 </div>
             </div>
             {showList === "all" ? 
-            <div className="courses">
+            <div className="main-courses">
                 <h1 className="course-title1">Trending</h1>
                 <h2 className="course-title2">Top picks for You.</h2>
                 <div className="course-list">
