@@ -1,0 +1,18 @@
+.videos {
+  display: flex;
+  flex-direction: column;
+}
+.status-conatiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hr {
+  border: 0;
+  border-top: 1px solid #444;
+  opacity: 10%;
+}
+.title {
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 14px;
+}
