@@ -47,8 +47,15 @@
 .chapter-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
   overflow: hidden;
-  transition: height 0.3s ease, padding 0.3s ease-in-out;
+  border-radius: 0;
   background: rgba(249, 249, 249, 0.9);
+  font-size: 20px;
+}
+.chapter-details.open {
+  max-height: 1000px; /* large enough to fit any content */
+  padding: 30px;
+  opacity: 1;
+  pointer-events: auto;
 }

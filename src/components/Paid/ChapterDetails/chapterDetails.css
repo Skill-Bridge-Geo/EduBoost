@@ -1,0 +1,13 @@
+.videos{
+  display: flex;
+  flex-direction: column;
+}
+.status-conatiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hr {
+  height: 1px;
+  color: green;
+}

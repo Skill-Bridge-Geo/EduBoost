@@ -1,9 +1,8 @@
 import { Chapter } from "../../../types";
-import { useState, useEffect, useRef } from "react";
-import React from "react";
-
+import { motion, AnimatePresence } from "framer-motion";
 import arrowIcon from "../../../assets/arrowIcon.png";
 import dotIcon from "../../../assets/dot.svg";
+import ChapterDetails from "../ChapterDetails/ChapterDetails";
 
 interface QuestionProps {
   chapter: Chapter;
@@ -19,20 +18,9 @@ export default function QuestionAnswerDiv({
   setActiveIndex,
 }: QuestionProps) {
   const isActive = activeIndex === index;
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState("0px");
-
-  useEffect(() => {
-    if (contentRef.current) {
-      if (isActive) {
-        setHeight(`${contentRef.current.scrollHeight}px`);
-      } else {
-        setHeight("0px");
-      }
-    }
-  }, [isActive]);
 
   const toggleAccordion = () => {
+    console.log("Clicked:", index, "Current active:", activeIndex);
     setActiveIndex(isActive ? null : index);
   };
 
@@ -41,15 +29,15 @@ export default function QuestionAnswerDiv({
       <div onClick={toggleAccordion} className='question-arrow'>
         <div className='chapter-child'>
           <h3 className='chapter-title'>{chapter.title}</h3>
-          <p className='chapter-details-info'>
+          <div className='chapter-details-info'>
             <p>
               1/<span>{chapter.videos.length} Videos</span>
             </p>
-            <img src={dotIcon} alt='dot icon' />{" "}
+            <img src={dotIcon} alt='dot icon' />
             <span className='total-duration'>
               {chapter.totalDuration}
             </span>
-          </p>
+          </div>
         </div>
         <img
           className={`arrow-icon ${isActive ? "arrow-rotated" : ""}`}
@@ -57,14 +45,34 @@ export default function QuestionAnswerDiv({
           alt='arrow icon'
         />
       </div>
-      <div
-        className='chapter-details '
-        style={{
-          height,
-          padding: isActive ? "15px" : "0px",
-        }}
-        ref={contentRef}
-      ></div>
+      <AnimatePresence initial={false}>
+        {isActive && (
+          <motion.div
+            key='content'
+            className='chapter-details'
+            initial={{ height: 0 }}
+            animate={{ height: "auto" }}
+            exit={{ height: 0 }}
+            transition={{
+              height: {
+                duration: 0.3,
+                ease: "easeInOut",
+              },
+            }}
+            style={{ overflow: "hidden" }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.1 }}
+              style={{ padding: "20px" }}
+            >
+              <ChapterDetails chapter={chapter} />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
