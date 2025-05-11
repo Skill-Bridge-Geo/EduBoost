@@ -68,6 +68,16 @@ export default function ChapterDetails({ chapter }: Props) {
                   ref={(el) => {
                     videoRefs.current[video.id] = el;
                   }}
+                  onLoadedMetadata={(e) => {
+                    const videoElement = e.currentTarget;
+                    const duration = Math.floor(
+                      videoElement.duration
+                    );
+                    setVideoDurations((prev) => ({
+                      ...prev,
+                      [video.id]: duration,
+                    }));
+                  }}
                   controls
                   src={video.videoUrl}
                   style={{ display: "block" }}
