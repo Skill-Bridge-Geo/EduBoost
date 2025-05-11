@@ -51,16 +51,16 @@
         {
           "id": 1,
           "title": "Installing Vue JS",
-          "duration": 600,
+
           "status": "completed",
-          "videoUrl": "https://www.example.com/video1.mp4"
+          "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
         },
         {
           "id": 2,
           "title": "Understand Vue Components",
-          "duration": 3540,
+     
           "status": "playing",
-          "videoUrl": "https://www.example.com/video2.mp4"
+          "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
         }
       ]
     },
@@ -74,14 +74,14 @@
         {
           "id": 1,
           "title": "Vue Templating",
-          "duration": 720,
+      
           "status": "locked",
           "videoUrl": "https://www.example.com/video3.mp4"
         },
         {
           "id": 2,
           "title": "Vue Forms",
-          "duration": 1380,
+         
           "status": "locked",
           "videoUrl": "https://www.example.com/video4.mp4"
         }
@@ -92,12 +92,12 @@
       "title": "Chapter 3: Components",
       "totalVideos": 12,
       "watchedVideos": 0,
-      "totalDuration": "1h 28m",
+      "totalDuration": "12",
       "videos": [
         {
           "id": 1,
           "title": "Component Basics",
-          "duration": 900,
+      
           "status": "locked",
           "videoUrl": "https://www.example.com/video5.mp4"
         }
