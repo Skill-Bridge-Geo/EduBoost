@@ -8,7 +8,7 @@ main{
 h1{
     font-family: 'Gilroy-Bold', sans-serif;
 }
-h2, p{
+p{
     font-family: 'Gilroy-Medium', sans-serif;
 }
 
@@ -23,7 +23,7 @@ h2, p{
     flex-wrap: nowrap;
     align-items: center;
 }
-.mobile-list h2{
+.mobile-list p{
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
@@ -35,13 +35,13 @@ h2, p{
     align-items: center;
     position: relative;
 }
-.active h2{
+.active p{
     color: #3DCBB1;
 }
-.inactive h2{
+.inactive p{
     color: #000000;
 }
-.active h2::after{
+.active p::after{
     content: '';
     position: absolute;
     bottom: 0;
@@ -282,7 +282,7 @@ h2, p{
     max-width: 150px;
     margin-bottom: 8px;
 }
-.web-info h2{
+.web-info p{
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;

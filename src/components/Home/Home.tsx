@@ -26,14 +26,14 @@ const Home = () => {
     return ( 
         <main>
             <div className="mobile-list">
-                <div className={`${showList === "all" ? 'active' : 'inactive'}`} onClick={() => handleListClick("all")}><h2>All</h2></div>
-                <div className={`${showList === "illustrator" ? 'active' : 'inactive'}`} onClick={() => handleListClick("illustrator")}><h2>Illustrator</h2></div>
-                <div className={`${showList === "photoshop" ? 'active' : 'inactive'}`} onClick={() => handleListClick("photoshop")}><h2>Photoshop</h2></div>
-                <div className={`${showList === "UI design" ? 'active' : 'inactive'}`} onClick={() => handleListClick("ui design")}><h2>UI Design</h2></div>
-                <div className={`${showList === "web" ? 'active' : 'inactive'}`} onClick={() => handleListClick("web")}><h2>Web</h2></div>
-                <div className={`${showList === "mobile" ? 'active' : 'inactive'}`} onClick={() => handleListClick("mobile")}><h2>Mobile</h2></div>
-                <div className={`${showList === "backend" ? 'active' : 'inactive'}`} onClick={() => handleListClick("backend")}><h2>Backend</h2></div>
-                <div className={`${showList === "vue js" ? 'active' : 'inactive'}`} onClick={() => handleListClick("vue js")}><h2>Vue JS</h2></div>
+                <div className={`${showList === "all" ? 'active' : 'inactive'}`} onClick={() => handleListClick("all")}><p>All</p></div>
+                <div className={`${showList === "illustrator" ? 'active' : 'inactive'}`} onClick={() => handleListClick("illustrator")}><p>Illustrator</p></div>
+                <div className={`${showList === "photoshop" ? 'active' : 'inactive'}`} onClick={() => handleListClick("photoshop")}><p>Photoshop</p></div>
+                <div className={`${showList === "UI design" ? 'active' : 'inactive'}`} onClick={() => handleListClick("ui design")}><p>UI Design</p></div>
+                <div className={`${showList === "web" ? 'active' : 'inactive'}`} onClick={() => handleListClick("web")}><p>Web</p></div>
+                <div className={`${showList === "mobile" ? 'active' : 'inactive'}`} onClick={() => handleListClick("mobile")}><p>Mobile</p></div>
+                <div className={`${showList === "backend" ? 'active' : 'inactive'}`} onClick={() => handleListClick("backend")}><p>Backend</p></div>
+                <div className={`${showList === "vue js" ? 'active' : 'inactive'}`} onClick={() => handleListClick("vue js")}><p>Vue JS</p></div>
             </div>
             <div className="banner">
                 <img src={BannerPicture} alt="banner" id="banner-image"/>
@@ -58,7 +58,7 @@ const Home = () => {
             </div>
             <div className="main-courses" style={{minHeight: "300px"}}>
                 <h1 className="course-title1">More from Kitani Studio</h1>
-                <h2 className="course-title2">Top picks for You.</h2>
+                <p className="course-title2">Top picks for You.</p>
                 <div className="course-list">
                     {cartsToShow.map((cart: Cart) => {
                         return(
@@ -70,7 +70,7 @@ const Home = () => {
             {showList === "all" ? 
             <div className="main-courses">
                 <h1 className="course-title1">Trending</h1>
-                <h2 className="course-title2">Top picks for You.</h2>
+                <p className="course-title2">Top picks for You.</p>
                 <div className="course-list">
                     {Trendings.map((cart: Cart) => {
                         return(
@@ -102,7 +102,7 @@ const Home = () => {
                     </div>
                     <div className="web-info">
                         <h1>Film Maker Skillset for Beginner.</h1>
-                        <h2>Kitani Sarasvati</h2>
+                        <p>Kitani Sarasvati</p>
                     </div>
                     <button className="web-button"><h1>Get it Now</h1></button>
                 </div>
