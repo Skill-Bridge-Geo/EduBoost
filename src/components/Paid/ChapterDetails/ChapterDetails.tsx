@@ -41,7 +41,7 @@ export default function ChapterDetails({
                 >
                   {currentVideo === video.videoUrl
                     ? formatTime(timeLeft)
-                    : "0:00"}
+                    : video.duration}
                 </p>
                 {/* Hidden video element */}
               </div>

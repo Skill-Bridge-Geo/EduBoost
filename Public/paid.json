@@ -46,19 +46,19 @@
       "title": "Chapter 1: Course Overview",
       "totalVideos": 12,
       "watchedVideos": 1,
-      "totalDuration": "28m",
+      "totalDuration": "970",
       "videos": [
         {
           "id": 1,
           "title": "Installing Vue JS",
-
+          "duration": 420,
           "status": "completed",
           "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
         },
         {
           "id": 2,
           "title": "Understand Vue Components",
-     
+          "duration": 510,
           "status": "playing",
           "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
         }
@@ -74,14 +74,14 @@
         {
           "id": 1,
           "title": "Vue Templating",
-      
+
           "status": "locked",
           "videoUrl": "https://www.example.com/video3.mp4"
         },
         {
           "id": 2,
           "title": "Vue Forms",
-         
+
           "status": "locked",
           "videoUrl": "https://www.example.com/video4.mp4"
         }
@@ -97,7 +97,7 @@
         {
           "id": 1,
           "title": "Component Basics",
-      
+
           "status": "locked",
           "videoUrl": "https://www.example.com/video5.mp4"
         }
