@@ -5,7 +5,17 @@ import axios from "axios";
 import { CourseData } from "../../../types";
 import QuestionAnswerDiv from "./QuestionAnswerDiv";
 
-export default function Questions() {
+interface props {
+  currentVideo:string
+  setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
+  timeLeft: number;
+}
+
+export default function Questions({
+  setCurrentVideo,
+  timeLeft,
+  currentVideo,
+}: props) {
   const [data, setData] = useState<CourseData | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -25,9 +35,11 @@ export default function Questions() {
           index={index}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
+          currentVideo={currentVideo}
+          setCurrentVideo={setCurrentVideo}
+          timeLeft={timeLeft}
         />
       ))}
     </div>
   );
 }
-

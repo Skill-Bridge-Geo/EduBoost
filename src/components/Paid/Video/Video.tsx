@@ -15,6 +15,8 @@ import Questions from "../Questions/Questions";
 export default function Video() {
   const [data, setData] = useState<CourseData | null>(null);
   const [isSelected, setIsSelected] = useState<string>("Courses");
+  const [currentVideo,setCurrentVideo]=useState<string>("")
+  const [timeLeft, setTimeLeft] = useState<number>(0);
 
   useEffect(() => {
     axios
@@ -40,7 +42,11 @@ export default function Video() {
           </div>
         </div>
         <div className='video-container'>
-          <VideoPlayer />
+          <VideoPlayer
+            currentVideo={currentVideo}
+   
+            setTimeLeft={setTimeLeft}
+          />
         </div>
 
         <section className='course-raitings'>
@@ -106,7 +112,11 @@ export default function Video() {
             ></div>
           </div>
         </div>
-        <Questions />
+        <Questions
+          currentVideo={currentVideo}
+          setCurrentVideo={setCurrentVideo}
+          timeLeft={timeLeft}
+        />
       </section>
     </div>
   );
