@@ -46,9 +46,11 @@
     flex-direction: column;
     gap: 5px;
 }
-.duration {
+.durationGreen {
     color: #00DDC0;
-    width: 400px;
+}
+.durationRed {
+    color: red;
 }
 .playIcon {
     width: 20px;
