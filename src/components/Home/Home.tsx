@@ -9,9 +9,9 @@ import { Cart, Instructor } from "./features/interfaces";
 import SingleInstructor from "./features/singleInstructor";
 
 const Home = () => {
-    const [showList, setShowList] = useState("all");
+    const [showList, setShowList] = useState<string>("all");
     const myInstructors: Instructor[] = Instructors;
-    const Trendings = Carts.filter((cart: Cart) => cart.isTrending === true);
+    const Trendings: Cart[] = Carts.filter((cart: Cart) => cart.isTrending === true);
     const [cartsToShow, setCartsToShow] = useState<Cart[]>(Carts.filter((cart: Cart) => cart.isTrending === false));
     useEffect(() => {
         if(showList == "all"){
