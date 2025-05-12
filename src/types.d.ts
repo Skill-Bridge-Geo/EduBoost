@@ -13,10 +13,11 @@ export type Review = {
 };
 
 export type ChapterVideo = {
+  id: number;
   title: string;
   duration: string;
   status: "completed" | "playing" | "locked";
-  url: string;
+  videoUrl: string;
 };
 
 export type Chapter = {
