@@ -5,7 +5,7 @@ import { formatTime } from "../Video/VideoPlayer";
 
 interface Props {
   chapter: Chapter;
-  currentVideo:string,
+  currentVideo: string;
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
@@ -32,7 +32,17 @@ export default function ChapterDetails({
                   style={{ cursor: "pointer" }}
                 />
 
-                <p className={`${currentVideo === video.videoUrl?"durationRed":"durationGreen"}`}>{currentVideo === video.videoUrl?formatTime(timeLeft):"0:00"}</p>
+                <p
+                  className={`${
+                    currentVideo === video.videoUrl
+                      ? "durationRed"
+                      : "durationGreen"
+                  }`}
+                >
+                  {currentVideo === video.videoUrl
+                    ? formatTime(timeLeft)
+                    : "0:00"}
+                </p>
                 {/* Hidden video element */}
               </div>
             </div>
