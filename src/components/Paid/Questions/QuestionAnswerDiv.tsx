@@ -15,7 +15,7 @@ interface QuestionProps {
 }
 
 export default function QuestionAnswerDiv({
-    currentVideo,
+  currentVideo,
   setCurrentVideo,
   chapter,
   index,
