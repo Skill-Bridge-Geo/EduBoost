@@ -5,22 +5,27 @@ import dotIcon from "../../../assets/dot.svg";
 import ChapterDetails from "../ChapterDetails/ChapterDetails";
 
 interface QuestionProps {
+  currentVideo: string;
   chapter: Chapter;
   index: number;
   activeIndex: number | null;
   setActiveIndex: React.Dispatch<React.SetStateAction<number | null>>;
+  setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
+  timeLeft: number;
 }
 
 export default function QuestionAnswerDiv({
+  currentVideo,
+  setCurrentVideo,
   chapter,
   index,
   activeIndex,
   setActiveIndex,
+  timeLeft,
 }: QuestionProps) {
   const isActive = activeIndex === index;
 
   const toggleAccordion = () => {
-    console.log("Clicked:", index, "Current active:", activeIndex);
     setActiveIndex(isActive ? null : index);
   };
 
@@ -68,7 +73,12 @@ export default function QuestionAnswerDiv({
               transition={{ duration: 0.1 }}
               style={{ padding: "10px 15px" }}
             >
-              <ChapterDetails chapter={chapter} />
+              <ChapterDetails
+                chapter={chapter}
+                currentVideo={currentVideo}
+                setCurrentVideo={setCurrentVideo}
+                timeLeft={timeLeft}
+              />
             </motion.div>
           </motion.div>
         )}
