@@ -15,7 +15,7 @@ import Questions from "../Questions/Questions";
 export default function Video() {
   const [data, setData] = useState<CourseData | null>(null);
   const [isSelected, setIsSelected] = useState<string>("Courses");
-  const [currentVideo,setCurrentVideo]=useState<string>("")
+  const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
 
   useEffect(() => {
@@ -44,7 +44,6 @@ export default function Video() {
         <div className='video-container'>
           <VideoPlayer
             currentVideo={currentVideo}
-   
             setTimeLeft={setTimeLeft}
           />
         </div>
