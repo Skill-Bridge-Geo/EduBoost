@@ -15,7 +15,7 @@ export type Review = {
 export type ChapterVideo = {
   id: number;
   title: string;
-  duration: string;
+  duration: number;
   status: "completed" | "playing" | "locked";
   videoUrl: string;
 };
