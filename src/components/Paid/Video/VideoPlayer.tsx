@@ -9,11 +9,13 @@ export function formatTime(seconds: number) {
   const hrs = Math.floor(seconds / 3600);
   const mins = Math.floor((seconds % 3600) / 60);
   const secs = Math.floor(seconds % 60);
-  const pad = (n: number) => n.toString().padStart(2, "0");
+  const pad = (n: number) => n.toString()
 
   return hrs > 0
-    ? `${pad(hrs)}:${pad(mins)}:${pad(secs)}`
-    : `${pad(mins)}:${pad(secs)}`;
+    ? `${pad(hrs)}h ${pad(mins)}m`
+    : mins > 1
+    ? `${pad(mins)}m`
+    : `${pad(secs)}s`;
 }
 
 export default function VideoPlayer({

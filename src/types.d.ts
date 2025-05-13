@@ -23,7 +23,7 @@ export type ChapterVideo = {
 export type Chapter = {
   title: string;
   videosCount: number;
-  totalDuration: string;
+  totalDuration: number;
   videos: ChapterVideo[];
 };
 
