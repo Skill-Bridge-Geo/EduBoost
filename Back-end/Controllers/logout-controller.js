@@ -4,6 +4,5 @@ export const logoutUser = (req, res) => {
         secure: true,
         sameSite: 'Strict'
     })
-    console.log(req.user)
     return res.status(200).json({ message: 'Logged out successfully' })
 }

@@ -9,6 +9,7 @@ import registerRoute from './Routes/register-router.js'
 import loginRouter from './Routes/login-router.js'
 import logoutRouter from './Routes/logout-router.js'
 import personalisationRouter from './Routes/personalisation-1-router.js'
+import homePageRouter from './Routes/homepage-router.js'
 
 // Environment variables
 dotenv.config()
@@ -33,6 +34,7 @@ app.use('/register', registerRoute)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
 app.use('/personalisation', personalisationRouter)
+app.use('/homepage', homePageRouter)
 
 // Database connection
 mongoose
