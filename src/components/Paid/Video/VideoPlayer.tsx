@@ -9,7 +9,7 @@ export function formatTime(seconds: number) {
   const hrs = Math.floor(seconds / 3600);
   const mins = Math.floor((seconds % 3600) / 60);
   const secs = Math.floor(seconds % 60);
-  const pad = (n: number) => n.toString()
+  const pad = (n: number) => n.toString();
 
   return hrs > 0
     ? `${pad(hrs)}h ${pad(mins)}m`
@@ -22,14 +22,18 @@ export default function VideoPlayer({
   currentVideo,
   setTimeLeft,
 }: Props) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  //   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   return (
     <div>
       <video
-        ref={videoRef}
+        // ref={videoRef}
         src={currentVideo}
         controls
+        // onLoadedMetadata={(e) => {
+        //   const duration = Math.floor(e.currentTarget.duration);
+        //   setTimeLeft(duration);
+        // }}
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);

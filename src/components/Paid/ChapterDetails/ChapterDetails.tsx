@@ -1,6 +1,5 @@
 import { Chapter } from "../../../types";
 import "./chapterDetails.css";
-import playVideoIcon from "../../../assets/playVideo.svg";
 import { formatTime } from "../Video/VideoPlayer";
 
 interface Props {
@@ -8,6 +7,7 @@ interface Props {
   currentVideo: string;
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
+
 }
 
 export default function ChapterDetails({
@@ -24,19 +24,38 @@ export default function ChapterDetails({
             <div className='play-wrapper'>
               <p className='title'>{video.title}</p>
               <div className='play'>
-                <img
-                  className='playIcon'
-                  src={playVideoIcon}
-                  alt='playVideoIcon'
-                  onClick={() => setCurrentVideo(video.videoUrl)}
+                <div
                   style={{ cursor: "pointer" }}
-                />
+                  onClick={() => setCurrentVideo(video.videoUrl)}
+                >
+                  <svg
+                    className='playIcon'
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='12'
+                    height='12'
+                    viewBox='0 0 12 12'
+                    fill='none'
+                  >
+                    <path
+                      fill-rule='evenodd'
+                      clip-rule='evenodd'
+                      d='M1 6C1 3.24 3.24 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.24 11 1 8.76 1 6ZM5.4 4.05C5.235 3.925 5 4.045 5 4.25V7.75C5 7.955 5.235 8.075 5.4 7.95L7.735 6.2C7.87 6.1 7.87 5.9 7.735 5.8L5.4 4.05Z'
+                      fill={`${
+                        video.status === "locked"
+                          ? "lightgray"
+                          : "lightgreen"
+                      }`}
+                    />
+                  </svg>
+                </div>
 
                 <p
                   className={`${
-                    currentVideo === video.videoUrl
-                      ? "durationRed"
-                      : "durationGreen"
+                   video.status ==="playing"
+                      ? "durationPlaying"
+                      : video.status === "locked"
+                      ? "durationLocked"
+                      : "durationCompleted"
                   }`}
                 >
                   {currentVideo === video.videoUrl
@@ -49,10 +68,10 @@ export default function ChapterDetails({
             <div
               className={
                 video.status === "completed"
-                  ? "completed"
+                  ? "statusCompleted"
                   : video.status === "playing"
-                  ? "uncompleted"
-                  : "locked"
+                  ? "statusPlaying"
+                  : ""
               }
             >
               {video.status === "completed"
