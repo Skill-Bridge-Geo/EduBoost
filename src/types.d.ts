@@ -17,6 +17,7 @@ export type ChapterVideo = {
   title: string;
   duration: number;
   status: "completed" | "playing" | "locked";
+  isCurrent:boolean;
   videoUrl: string;
 };
 
