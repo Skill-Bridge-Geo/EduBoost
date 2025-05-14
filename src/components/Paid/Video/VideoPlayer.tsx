@@ -27,6 +27,7 @@ export default function VideoPlayer({
       <video
         src={currentVideo}
         controls
+        autoPlay
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
