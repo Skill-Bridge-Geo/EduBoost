@@ -123,7 +123,7 @@
 }
 /* cart content end */
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 1024px){
     /* cart placeholder start */
     .placeholder-img{
         border-radius: 23px;

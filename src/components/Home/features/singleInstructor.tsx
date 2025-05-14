@@ -15,7 +15,7 @@ const SingleInstructor: React.FC<{
                 <img src={images[myInstructor.id - 1]} alt="instructor" />
             </div>
             <div className="info">
-                <h2>{myInstructor.name}</h2>
+                <h1>{myInstructor.name}</h1>
                 <p>{myInstructor.position}</p>
             </div>
         </div>

@@ -4,12 +4,13 @@ import BannerPicture from "../../assets/Image.png";
 import Vector from "../../assets/Vector.png";
 import Avatar from "../../assets/photographer.png";
 import WebinarPicture from "../../assets/Instructor4.png"
+import SubscriptionImage from "../../assets/Aare.png";
 import Carts from "../../carts.json";
 import Instructors from "../../instructors.json";
 import SingleCart from "./features/SingleCart";
 import { Cart, Instructor } from "./features/interfaces";
 import SingleInstructor from "./features/singleInstructor";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoMdSearch } from "react-icons/io";
 
 const Home = () => {
     const bannerPagesNumber: number = 4;
@@ -41,14 +42,14 @@ const Home = () => {
         <main>
             <div className="showlist-and-banner-parent">
                 <div className="show-list">
-                    <div className={`${showList === "all" ? 'active' : 'inactive'}`} onClick={() => handleListClick("all")}><p>All<span className="tablet-span">&nbsp;Recommendation</span></p></div>
-                    <div className={`${showList === "illustrator" ? 'active' : 'inactive'}`} onClick={() => handleListClick("illustrator")}><p><span className="tablet-span">Adobe&nbsp;</span>Illustrator</p></div>
-                    <div className={`${showList === "photoshop" ? 'active' : 'inactive'}`} onClick={() => handleListClick("photoshop")}><p><span className="tablet-span">Adobe&nbsp;</span>Photoshop</p></div>
-                    <div className={`${showList === "ui design" ? 'active' : 'inactive'}`} onClick={() => handleListClick("ui design")}><p>UI Design</p></div>
-                    <div className={`${showList === "web" ? 'active' : 'inactive'}`} onClick={() => handleListClick("web")}><p>Web<span className="tablet-span">&nbsp;Programming</span></p></div>
-                    <div className={`${showList === "mobile" ? 'active' : 'inactive'}`} onClick={() => handleListClick("mobile")}><p>Mobile<span className="tablet-span">&nbsp;Programming</span></p></div>
-                    <div className={`${showList === "backend" ? 'active' : 'inactive'}`} onClick={() => handleListClick("backend")}><p>Backend<span className="tablet-span">&nbsp;Development</span></p></div>
-                    <div className={`${showList === "vue js" ? 'active' : 'inactive'}`} onClick={() => handleListClick("vue js")}><p>Vue JS</p></div>
+                    <div className={`${showList === "all" ? 'active' : 'inactive'}`} onClick={() => handleListClick("all")}><h1 className="p1">All<span className="tablet-span">&nbsp;Recommendation</span></h1></div>
+                    <div className={`${showList === "illustrator" ? 'active' : 'inactive'}`} onClick={() => handleListClick("illustrator")}><h1 className="p1"><span className="tablet-span">Adobe&nbsp;</span>Illustrator</h1></div>
+                    <div className={`${showList === "photoshop" ? 'active' : 'inactive'}`} onClick={() => handleListClick("photoshop")}><h1 className="p1"><span className="tablet-span">Adobe&nbsp;</span>Photoshop</h1></div>
+                    <div className={`${showList === "ui design" ? 'active' : 'inactive'}`} onClick={() => handleListClick("ui design")}><h1 className="p1">UI Design</h1></div>
+                    <div className={`${showList === "web" ? 'active' : 'inactive'}`} onClick={() => handleListClick("web")}><h1 className="p1">Web<span className="tablet-span">&nbsp;Programming</span></h1></div>
+                    <div className={`${showList === "mobile" ? 'active' : 'inactive'}`} onClick={() => handleListClick("mobile")}><h1 className="p1">Mobile<span className="tablet-span">&nbsp;Programming</span></h1></div>
+                    <div className={`${showList === "backend" ? 'active' : 'inactive'}`} onClick={() => handleListClick("backend")}><h1 className="p1">Backend<span className="tablet-span">&nbsp;Development</span></h1></div>
+                    <div className={`${showList === "vue js" ? 'active' : 'inactive'}`} onClick={() => handleListClick("vue js")}><h1 className="p1">Vue JS</h1></div>
                 </div>
                 <div className="parent-banner">
                     <div className="banner">
@@ -114,6 +115,7 @@ const Home = () => {
             <></>}
             <div className="instructors">
                 <h1 className="instr-header">Popular Instructor</h1>
+                <p className="instr-header-p">We know the best things for You.  Top picks for You.</p>
                 <div className="instr-list">
                     {myInstructors.map((instructor: Instructor) => {
                         return(
@@ -137,6 +139,15 @@ const Home = () => {
                         <p>Kitani Sarasvati</p>
                     </div>
                     <button className="web-button"><h1>Get it Now</h1></button>
+                </div>
+            </div>
+            <div className="subscription">
+                <img src={SubscriptionImage} alt="background" className="sub-background"/>
+                <h1 className="sub-font">Get Amazing Discount and Course Update </h1>
+                <div className="email-area">
+                    <input type="text" placeholder="Email Address"/>
+                    <button><h1>Subscribe</h1></button>
+                    <IoMdSearch className="search-icon"/>
                 </div>
             </div>
         </main> 
