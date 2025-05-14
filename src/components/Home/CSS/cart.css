@@ -170,3 +170,15 @@
     }
     /* cart content end */
 }
+
+@media only screen and (min-width: 1440px){
+    .single-cart{
+        cursor: pointer;
+    }
+
+    /* cart content start */
+    .rate-star{
+        font-size: 16px;
+    }
+    /* cart content end */
+}
