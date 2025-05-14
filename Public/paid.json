@@ -61,7 +61,14 @@
           "duration": 510,
           "status": "playing",
           "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
-        }
+        },
+         {
+           "id": 3,
+           "title": "Understand Vue Components222",
+           "duration": 763,
+           "status": "locked",
+           "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
+         }
       ]
     },
     {

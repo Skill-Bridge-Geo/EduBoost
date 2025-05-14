@@ -79,7 +79,6 @@ export default function QuestionAnswerDiv({
                 currentVideo={currentVideo}
                 setCurrentVideo={setCurrentVideo}
                 timeLeft={timeLeft}
-                
               />
             </motion.div>
           </motion.div>
