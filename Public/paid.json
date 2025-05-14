@@ -46,29 +46,31 @@
       "title": "Chapter 1: Course Overview",
       "totalVideos": 12,
       "watchedVideos": 1,
-      "totalDuration": 9790,
+      "totalDuration": 1620,
       "videos": [
         {
           "id": 1,
           "title": "Installing Vue JS",
           "duration": 420,
-          "status": "completed",
+          "status": "locked",
+          "isCurrent": true,
           "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
         },
         {
           "id": 2,
           "title": "Understand Vue Components",
           "duration": 510,
-          "status": "playing",
+          "status": "locked",
+          "isCurrent": false,
           "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
         },
-         {
-           "id": 3,
-           "title": "Understand Vue Components222",
-           "duration": 763,
-           "status": "locked",
-           "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
-         }
+        {
+          "id": 3,
+          "title": "Understand Vue Components222",
+          "duration": 763,
+          "status": "locked",
+          "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
+        }
       ]
     },
     {
@@ -81,14 +83,15 @@
         {
           "id": 1,
           "title": "Vue Templating",
-
+          "duration": 1763,
           "status": "locked",
+          "isCurrent": false,
           "videoUrl": "https://www.example.com/video3.mp4"
         },
         {
           "id": 2,
           "title": "Vue Forms",
-
+          "duration": 1463,
           "status": "locked",
           "videoUrl": "https://www.example.com/video4.mp4"
         }
@@ -104,8 +107,9 @@
         {
           "id": 1,
           "title": "Component Basics",
-
+          "duration": 2363,
           "status": "locked",
+          "isCurrent": false,
           "videoUrl": "https://www.example.com/video5.mp4"
         }
       ]

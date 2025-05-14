@@ -7,7 +7,6 @@ interface Props {
   currentVideo: string;
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
-
 }
 
 export default function ChapterDetails({
@@ -19,14 +18,14 @@ export default function ChapterDetails({
   return (
     <div className='main'>
       {chapter.videos.map((video, index) => (
-        <div className='video-wrapper' key={index}>
+        <div className={`video-wrapper ${video.isCurrent && "isCurrent"}`} key={index}>
           <div className='status-conatiner'>
             <div className='play-wrapper'>
               <p className='title'>{video.title}</p>
               <div className='play'>
                 <div
                   style={{ cursor: "pointer" }}
-                  onClick={() => setCurrentVideo(video.videoUrl)}
+                  onClick={() => {setCurrentVideo(video.videoUrl);video.status="playing"}}
                 >
                   <svg
                     className='playIcon'
@@ -41,9 +40,9 @@ export default function ChapterDetails({
                       clip-rule='evenodd'
                       d='M1 6C1 3.24 3.24 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.24 11 1 8.76 1 6ZM5.4 4.05C5.235 3.925 5 4.045 5 4.25V7.75C5 7.955 5.235 8.075 5.4 7.95L7.735 6.2C7.87 6.1 7.87 5.9 7.735 5.8L5.4 4.05Z'
                       fill={`${
-                        video.status === "locked"
-                          ? "lightgray"
-                          : "lightgreen"
+                        video.isCurrent
+                          ?   "lightgreen"
+                          : "lightgray"
                       }`}
                     />
                   </svg>
@@ -51,7 +50,7 @@ export default function ChapterDetails({
 
                 <p
                   className={`${
-                   video.status ==="playing"
+                    video.status === "playing"
                       ? "durationPlaying"
                       : video.status === "locked"
                       ? "durationLocked"
