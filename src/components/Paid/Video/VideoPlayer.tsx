@@ -22,18 +22,11 @@ export default function VideoPlayer({
   currentVideo,
   setTimeLeft,
 }: Props) {
-  //   const videoRef = useRef<HTMLVideoElement | null>(null);
-
   return (
     <div>
       <video
-        // ref={videoRef}
         src={currentVideo}
         controls
-        // onLoadedMetadata={(e) => {
-        //   const duration = Math.floor(e.currentTarget.duration);
-        //   setTimeLeft(duration);
-        // }}
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
