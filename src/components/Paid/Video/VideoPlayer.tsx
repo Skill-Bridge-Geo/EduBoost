@@ -1,4 +1,4 @@
-import { handleVideoEndRef } from "../ChapterDetails/ChapterDetails";
+// import { handleVideoEndRef } from "../ChapterDetails/ChapterDetails";
 
 interface Props {
   currentVideo: string;
@@ -29,7 +29,7 @@ export default function VideoPlayer({
         src={currentVideo}
         controls
         autoPlay
-        onEnded={() => handleVideoEndRef.current?.()}
+        // onEnded={h}
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
