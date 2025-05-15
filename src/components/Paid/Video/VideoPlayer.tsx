@@ -25,8 +25,10 @@ export default function VideoPlayer({
   return (
     <div>
       <video
+        className='video'
         src={currentVideo}
         controls
+        autoPlay
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
@@ -36,7 +38,6 @@ export default function VideoPlayer({
           const current = Math.floor(e.currentTarget.currentTime);
           setTimeLeft(Math.max(duration - current, 0));
         }}
-        style={{ display: "block", width: "100%", maxWidth: "800px" }}
       />
     </div>
   );
