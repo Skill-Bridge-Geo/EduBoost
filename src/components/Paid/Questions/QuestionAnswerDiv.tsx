@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import arrowIcon from "../../../assets/arrowIcon.png";
 import dotIcon from "../../../assets/dot.svg";
 import ChapterDetails from "../ChapterDetails/ChapterDetails";
+import { formatTime } from "../Video/VideoPlayer";
 
 interface QuestionProps {
   currentVideo: string;
@@ -40,7 +41,7 @@ export default function QuestionAnswerDiv({
             </p>
             <img src={dotIcon} alt='dot icon' />
             <span className='total-duration'>
-              {chapter.totalDuration}
+              {formatTime(chapter.totalDuration)}
             </span>
           </div>
         </div>
@@ -70,7 +71,7 @@ export default function QuestionAnswerDiv({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.1 }}
+              transition={{ duration: 0.3 }}
               style={{ padding: "10px 15px" }}
             >
               <ChapterDetails

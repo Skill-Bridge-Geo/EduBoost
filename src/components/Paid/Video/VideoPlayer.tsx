@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { handleVideoEndRef } from "../ChapterDetails/ChapterDetails";
 
 interface Props {
   currentVideo: string;
@@ -9,25 +9,27 @@ export function formatTime(seconds: number) {
   const hrs = Math.floor(seconds / 3600);
   const mins = Math.floor((seconds % 3600) / 60);
   const secs = Math.floor(seconds % 60);
-  const pad = (n: number) => n.toString().padStart(2, "0");
+  const pad = (n: number) => n.toString();
 
   return hrs > 0
-    ? `${pad(hrs)}:${pad(mins)}:${pad(secs)}`
-    : `${pad(mins)}:${pad(secs)}`;
+    ? `${pad(hrs)}h ${pad(mins)}m`
+    : mins > 1
+    ? `${pad(mins)}m`
+    : `${pad(secs)}s`;
 }
 
 export default function VideoPlayer({
   currentVideo,
   setTimeLeft,
 }: Props) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
   return (
     <div>
       <video
-        ref={videoRef}
+        className='video'
         src={currentVideo}
         controls
+        autoPlay
+        onEnded={() => handleVideoEndRef.current?.()}
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
@@ -37,7 +39,6 @@ export default function VideoPlayer({
           const current = Math.floor(e.currentTarget.currentTime);
           setTimeLeft(Math.max(duration - current, 0));
         }}
-        style={{ display: "block", width: "100%", maxWidth: "800px" }}
       />
     </div>
   );

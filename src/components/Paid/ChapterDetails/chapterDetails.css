@@ -15,6 +15,7 @@
   align-items: center;
 }
 
+
 .hr {
   border: 0;
   border-top: 1px solid #444;
@@ -24,13 +25,13 @@
   color: rgba(27, 27, 27, 0.6);
   font-size: 14px;
 }
-.completed {
+.statusCompleted {
   background-color: #00ddc0;
   color: white;
   font-size: 1rem;
   padding: 4px;
 }
-.uncompleted {
+.statusPlaying {
   background-color: #FE416D;
   color: white;
   font-size: 1rem;
@@ -46,14 +47,32 @@
     flex-direction: column;
     gap: 5px;
 }
-.durationGreen {
+.durationCompleted {
     color: #00DDC0;
 }
-.durationRed {
+.durationPlaying {
     color: red;
+}
+.durationLocked {
+    color: gray;
 }
 .playIcon {
     width: 20px;
     height: 20px;
 }
 
+.isCurrent {
+  position: relative;
+  padding-left: 16px;
+}
+
+.isCurrent::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10%;
+  height: 80%;
+  width: 4px;
+  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+  border-radius: 2px;
+}
