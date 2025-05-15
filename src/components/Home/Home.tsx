@@ -22,13 +22,10 @@ const Home = () => {
     Carts.filter((cart: Cart) => cart.isTrending === false)
   );
   useEffect(() => {
-    if (showList == "all") {
-      setCartsToShow(Carts.filter((cart: Cart) => cart.isTrending === false));
-    } else {
-      setCartsToShow(
-        Carts.filter((cart: Cart) => cart.category.toLowerCase() === showList)
-      );
-    }
+    const filtered = showList === "all"
+      ? Carts.filter(cart => !cart.isTrending)
+      : Carts.filter(cart => cart.category.toLowerCase() === showList);
+    setCartsToShow(filtered);
   }, [showList]);
   return (
     <main>
@@ -41,37 +38,36 @@ const Home = () => {
         <h1 className="course-title1">More from Kitani Studio</h1>
         <p className="course-title2">Top picks for You.</p>
         <div className="course-list">
-          {cartsToShow.map((cart: Cart) => {
-            return <SingleCart myCart={cart} key={cart.id} />;
-          })}
+          {cartsToShow.map(cart => (
+            <SingleCart myCart={cart} key={cart.id} />
+          ))}
         </div>
       </div>
-      {showList === "all" ? (
+
+      {showList === "all" && (
         <div className="main-courses">
           <h1 className="course-title1">Trending</h1>
           <p className="course-title2">Top picks for You.</p>
           <div className="course-list">
-            {Trendings.map((cart: Cart) => {
-              return <SingleCart myCart={cart} key={cart.id} />;
-            })}
+            {Trendings.map(cart => (
+              <SingleCart myCart={cart} key={cart.id} />
+            ))}
           </div>
         </div>
-      ) : (
-        <></>
       )}
+
       <div className="instructors">
         <h1 className="instr-header">Popular Instructor</h1>
         <p className="instr-header-p">
           We know the best things for You. Top picks for You.
         </p>
         <div className="instr-list">
-          {myInstructors.map((instructor: Instructor) => {
-            return (
-              <SingleInstructor myInstructor={instructor} key={instructor.id} />
-            );
-          })}
+          {myInstructors.map(instructor => (
+            <SingleInstructor myInstructor={instructor} key={instructor.id} />
+          ))}
         </div>
       </div>
+
       <div className="parent-webinar">
         <div className="webinar">
           <div className="image-container1">
@@ -91,6 +87,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+
       <div className="subscription">
         <img
           src={SubscriptionImage}

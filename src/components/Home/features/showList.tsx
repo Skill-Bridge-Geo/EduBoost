@@ -11,7 +11,7 @@ const ShowList: React.FC<{
   return (
     <div className="show-list">
       <div
-        className={`${showList === "all" ? "active" : "inactive"}`}
+        className={showList === "all" ? "active" : "inactive"}
         onClick={() => handleListClick("all")}
       >
         <h1 className="p1">
@@ -19,7 +19,7 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "illustrator" ? "active" : "inactive"}`}
+        className={showList === "illustrator" ? "active" : "inactive"}
         onClick={() => handleListClick("illustrator")}
       >
         <h1 className="p1">
@@ -27,7 +27,7 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "photoshop" ? "active" : "inactive"}`}
+        className={showList === "photoshop" ? "active" : "inactive"}
         onClick={() => handleListClick("photoshop")}
       >
         <h1 className="p1">
@@ -35,13 +35,13 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "ui design" ? "active" : "inactive"}`}
+        className={showList === "ui design" ? "active" : "inactive"}
         onClick={() => handleListClick("ui design")}
       >
         <h1 className="p1">UI Design</h1>
       </div>
       <div
-        className={`${showList === "web" ? "active" : "inactive"}`}
+        className={showList === "web" ? "active" : "inactive"}
         onClick={() => handleListClick("web")}
       >
         <h1 className="p1">
@@ -49,7 +49,7 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "mobile" ? "active" : "inactive"}`}
+        className={showList === "mobile" ? "active" : "inactive"}
         onClick={() => handleListClick("mobile")}
       >
         <h1 className="p1">
@@ -57,7 +57,7 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "backend" ? "active" : "inactive"}`}
+        className={showList === "backend" ? "active" : "inactive"}
         onClick={() => handleListClick("backend")}
       >
         <h1 className="p1">
@@ -65,7 +65,7 @@ const ShowList: React.FC<{
         </h1>
       </div>
       <div
-        className={`${showList === "vue js" ? "active" : "inactive"}`}
+        className={showList === "vue js" ? "active" : "inactive"}
         onClick={() => handleListClick("vue js")}
       >
         <h1 className="p1">Vue JS</h1>
