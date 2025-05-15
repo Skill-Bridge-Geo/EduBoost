@@ -11,5 +11,5 @@ export const useFetchPaidData = () => {
       .then((res) => setData(res.data))
       .catch((err) => setError(err));
   }, []);
-  return { data, error };
+  return { data };
 };

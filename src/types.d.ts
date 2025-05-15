@@ -17,7 +17,7 @@ export type ChapterVideo = {
   title: string;
   duration: number;
   status: "completed" | "playing" | "locked";
-  isCurrent:boolean;
+  isCurrent: boolean;
   videoUrl: string;
 };
 
@@ -27,6 +27,8 @@ export type Chapter = {
   totalDuration: number;
   videos: ChapterVideo[];
 };
+
+export type Chapters = Chapter[];
 
 export type Course = {
   coverSubtitle: string;
