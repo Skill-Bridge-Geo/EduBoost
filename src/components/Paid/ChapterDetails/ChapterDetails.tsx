@@ -10,7 +10,7 @@ interface Props {
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
-export const handleVideoEndRef = useRef<() => void | undefined>(() => {});
+export const handleVideoEndRef = useRef<() => void>(() => {});
 
 export default function ChapterDetails({
   chapter,
@@ -32,7 +32,7 @@ export default function ChapterDetails({
     }
   }, [data]);
 
-   handleVideoEndRef.current = () => {
+  handleVideoEndRef.current = () => {
     setChapters((prevChapters) => {
       if (!prevChapters.length) return prevChapters;
 
@@ -136,5 +136,3 @@ export default function ChapterDetails({
     </div>
   );
 }
-
-
