@@ -1,8 +1,8 @@
 import "./video.css";
-import { useEffect, useState } from "react";
-import { CourseData } from "../../../types"; // I
+import { useState } from "react";
 import VideoPlayer from "./VideoPlayer";
-import axios from "axios";
+
+import { useFetchPaidData } from "../customHook";
 
 import connectionIocn from "../../../assets/Cellular Connection.png";
 import wifiIcon from "../../../assets/Wifi.svg";
@@ -13,17 +13,10 @@ import Header from "../../Header/Header";
 import Questions from "../Questions/Questions";
 
 export default function Video() {
-  const [data, setData] = useState<CourseData | null>(null);
+  const { data } = useFetchPaidData();
   const [isSelected, setIsSelected] = useState<string>("Courses");
   const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
-
-  useEffect(() => {
-    axios
-      .get("/paid.json")
-      .then((res) => setData(res.data))
-      .catch((err) => console.error("Failed to load JSON:", err));
-  }, []);
 
   if (!data) return <div>Loading...</div>;
 
