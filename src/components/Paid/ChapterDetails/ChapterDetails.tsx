@@ -13,7 +13,7 @@ interface Props {
   timeLeft: number;
 }
 
-const {data}=useFetchPaidData()
+
 
 
 export default function ChapterDetails({
@@ -22,6 +22,7 @@ export default function ChapterDetails({
   currentVideo,
   setCurrentVideo,
 }: Props) {
+    const { data } = useFetchPaidData();
   return (
     <div className='main'>
       {chapter.videos.map((video, index) => (
