@@ -2,7 +2,9 @@ import { Chapter } from "../../../types";
 import "./chapterDetails.css";
 import { formatTime } from "../Video/VideoPlayer";
 
+
 import { useFetchPaidData } from "../customHook";
+
 
 interface Props {
   chapter: Chapter;
@@ -10,7 +12,9 @@ interface Props {
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
+
 const {data}=useFetchPaidData()
+
 
 export default function ChapterDetails({
   chapter,
@@ -22,9 +26,11 @@ export default function ChapterDetails({
     <div className='main'>
       {chapter.videos.map((video, index) => (
         <div
+
           className={`video-wrapper ${
             video.isCurrent && "isCurrent"
           }`}
+
           key={index}
         >
           <div className='status-conatiner'>
@@ -47,12 +53,14 @@ export default function ChapterDetails({
                     fill='none'
                   >
                     <path
-                      fill-rule='evenodd'
-                      clip-rule='evenodd'
+                      fillRule='evenodd'
+                      clipRule='evenodd'
                       d='M1 6C1 3.24 3.24 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.24 11 1 8.76 1 6ZM5.4 4.05C5.235 3.925 5 4.045 5 4.25V7.75C5 7.955 5.235 8.075 5.4 7.95L7.735 6.2C7.87 6.1 7.87 5.9 7.735 5.8L5.4 4.05Z'
+
                       fill={`${
                         video.isCurrent ? "lightgreen" : "lightgray"
                       }`}
+
                     />
                   </svg>
                 </div>
@@ -70,7 +78,6 @@ export default function ChapterDetails({
                     ? formatTime(timeLeft)
                     : formatTime(video.duration)}
                 </p>
-                {/* Hidden video element */}
               </div>
             </div>
             <div

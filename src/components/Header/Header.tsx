@@ -12,7 +12,7 @@ import iconSignUp from "../../assets/icon-sign-up.svg";
 
 export default function Header() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(false);
 
   const toggleLogin = () => {
     setIsLoginOpen(!isLoginOpen);
