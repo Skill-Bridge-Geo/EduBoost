@@ -1,0 +1,75 @@
+#banner-image{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+}
+#banner-overlay1{
+    position: absolute;
+    top: 0;
+    right: 150px;
+    width: 71px;
+    height: 100%;
+    background: linear-gradient(90deg, #C5322A 50%, rgba(197, 50, 42, 0) 100%);
+    z-index: -1;
+}
+#banner-overlay2{
+    position: absolute;
+    top: 0;
+    right: 210px;
+    width: 29px;
+    height: 100%;
+    background: linear-gradient(90deg, #C5322A 43.33%, rgba(197, 50, 42, 0) 94.89%);
+    z-index: -1;
+    rotate: 180deg;
+}
+#vector-overlay{
+    display: none;
+}
+
+@media only screen and (min-width: 1024px){
+    #banner-image{
+        width: 658px;
+        z-index: -1;
+    }
+    #banner-overlay1{
+        right: 431px;
+        width: 227px;
+        z-index: -1;
+    }
+    #banner-overlay2{
+        right: 530px;
+        width: 93px;
+        z-index: -1;
+    }
+    #vector-overlay{
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: 529px;
+        width: 674.6px;
+        height: 475.1px;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    #vector-overlay img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    #banner-overlay1{
+        right: 530px;
+        z-index: 0;
+    }
+    #banner-overlay2{
+        right: 676px;
+    }
+    #vector-overlay{
+        right: 636px;
+        z-index: -1;
+    }
+}

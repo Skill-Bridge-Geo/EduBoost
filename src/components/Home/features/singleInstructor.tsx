@@ -8,14 +8,14 @@ import img4 from "../../../assets/Instructor4.png"
 const SingleInstructor: React.FC<{
     myInstructor: Instructor;
 }> = ({myInstructor}) => {
-    const images = [img1, img2, img3, img4];
+    const images: string[] = [img1, img2, img3, img4];
     return ( 
         <div className="single-instructor">
             <div className="image-container">
                 <img src={images[myInstructor.id - 1]} alt="instructor" />
             </div>
             <div className="info">
-                <h2>{myInstructor.name}</h2>
+                <h1>{myInstructor.name}</h1>
                 <p>{myInstructor.position}</p>
             </div>
         </div>

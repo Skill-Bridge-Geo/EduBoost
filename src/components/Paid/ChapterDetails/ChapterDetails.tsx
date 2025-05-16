@@ -1,100 +1,79 @@
-import { useRef, useState } from "react";
 import { Chapter } from "../../../types";
 import "./chapterDetails.css";
-import playVideoIcon from "../../../assets/playVideo.svg";
+import { formatTime } from "../Video/VideoPlayer";
 
 interface Props {
   chapter: Chapter;
+  currentVideo: string;
+  setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
+  timeLeft: number;
 }
 
-function formatTime(seconds: number) {
-  const hrs = Math.floor(seconds / 3600);
-  const mins = Math.floor((seconds % 3600) / 60);
-  const secs = Math.floor(seconds % 60);
-  const pad = (n: number) => n.toString().padStart(2, "0");
-
-  return hrs > 0
-    ? `${pad(hrs)}:${pad(mins)}:${pad(secs)}`
-    : `${pad(mins)}:${pad(secs)}`;
-}
-
-export default function ChapterDetails({ chapter }: Props) {
-  const [videoDurations, setVideoDurations] = useState<{
-    [key: number]: number;
-  }>({});
-  const [timeLeft, setTimeLeft] = useState<{ [key: number]: number }>(
-    {}
-  );
-
-  const videoRefs = useRef<{
-    [key: number]: HTMLVideoElement | null;
-  }>({});
-
+export default function ChapterDetails({
+  chapter,
+  timeLeft,
+  currentVideo,
+  setCurrentVideo,
+}: Props) {
   return (
     <div className='main'>
       {chapter.videos.map((video, index) => (
-        <div className='video-wrapper' key={index}>
+        <div
+          className={`video-wrapper ${video.isCurrent && "isCurrent"}`}
+          key={index}
+        >
           <div className='status-conatiner'>
             <div className='play-wrapper'>
               <p className='title'>{video.title}</p>
               <div className='play'>
-                <img
-                  className='playIcon'
-                  src={playVideoIcon}
-                  alt='playVideoIcon'
-                  onClick={() => videoRefs.current[video.id]?.play()}
+                <div
                   style={{ cursor: "pointer" }}
-                />
-                <p className='duration'>
-                  {timeLeft[video.id] !== undefined
-                    ? formatTime(timeLeft[video.id])
-                    : "--:--"}
-                </p>
-                {/* Hidden video element */}
-                <video
-                  ref={(el) => {
-                    videoRefs.current[video.id] = el;
+                  onClick={() => {
+                    setCurrentVideo(video.videoUrl);
+                    video.status = "playing";
                   }}
-                  onLoadedMetadata={(e) => {
-                    const duration = Math.floor(
-                      e.currentTarget.duration
-                    );
-                    setVideoDurations((prev) => ({
-                      ...prev,
-                      [video.id]: duration,
-                    }));
-                    setTimeLeft((prev) => ({
-                      ...prev,
-                      [video.id]: duration,
-                    }));
-                  }}
-                  onTimeUpdate={(e) => {
-                    const currentTime = e.currentTarget.currentTime;
-                    const totalDuration = e.currentTarget.duration;
-                   const current = Math.floor(currentTime);
-                   const remaining = Math.max(
-                     Math.floor(totalDuration - current),
-                     0
-                   );
+                >
+                  <svg
+                    className='playIcon'
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='12'
+                    height='12'
+                    viewBox='0 0 12 12'
+                    fill='none'
+                  >
+                    <path
+                      fillRule='evenodd'
+                      clipRule='evenodd'
+                      d='M1 6C1 3.24 3.24 1 6 1C8.76 1 11 3.24 11 6C11 8.76 8.76 11 6 11C3.24 11 1 8.76 1 6ZM5.4 4.05C5.235 3.925 5 4.045 5 4.25V7.75C5 7.955 5.235 8.075 5.4 7.95L7.735 6.2C7.87 6.1 7.87 5.9 7.735 5.8L5.4 4.05Z'
+                      fill={
+                        video.isCurrent ? "lightgreen" : "lightgray"
+                      }
+                    />
+                  </svg>
+                </div>
 
-                    setTimeLeft((prev) => ({
-                      ...prev,
-                      [video.id]: remaining,
-                    }));
-                  }}
-                  controls
-                  src={video.videoUrl}
-                  style={{ display: "block" }}
-                />
+                <p
+                  className={`${
+                    video.status === "playing"
+                      ? "durationPlaying"
+                      : video.status === "locked"
+                      ? "durationLocked"
+                      : "durationCompleted"
+                  }`}
+                >
+                  {currentVideo === video.videoUrl
+                    ? formatTime(timeLeft)
+                    : formatTime(video.duration)}
+                </p>
               </div>
             </div>
             <div
               className={
                 video.status === "completed"
-                  ? "completed"
+                  ? "statusCompleted"
                   : video.status === "playing"
-                  ? "uncompleted"
-                  : "locked"
+                  ? "statusPlaying"
+                  : ""
               }
             >
               {video.status === "completed"
