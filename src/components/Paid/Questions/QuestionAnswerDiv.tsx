@@ -35,6 +35,7 @@ export default function QuestionAnswerDiv({
       <div onClick={toggleAccordion} className='question-arrow'>
         <div className='chapter-child'>
           <h3 className='chapter-title'>{chapter.title}</h3>
+
           <div className='chapter-details-info'>
             <p>
               1/<span>{chapter.videos.length} Videos</span>
@@ -44,6 +45,17 @@ export default function QuestionAnswerDiv({
               {formatTime(chapter.totalDuration)}
             </span>
           </div>
+
+          <p className='chapter-details-info'>
+            <p>
+              1/<span>{chapter.videos.length} Videos</span>
+            </p>
+            <img src={dotIcon} alt='dot icon' />{" "}
+            <span className='total-duration'>
+              {chapter.totalDuration}
+            </span>
+          </p>
+
         </div>
         <img
           className={`arrow-icon ${isActive ? "arrow-rotated" : ""}`}
@@ -51,6 +63,7 @@ export default function QuestionAnswerDiv({
           alt='arrow icon'
         />
       </div>
+
       <AnimatePresence initial={false}>
         {isActive && (
           <motion.div
@@ -84,6 +97,18 @@ export default function QuestionAnswerDiv({
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div
+        className={`chapter-details ${isActive ? "showAnswer" : ""}`}
+        style={{
+          height,
+          padding: isActive ? "15px" : "0px",
+        }}
+        ref={contentRef}
+      >
+        
+      </div>
+
     </div>
   );
 }

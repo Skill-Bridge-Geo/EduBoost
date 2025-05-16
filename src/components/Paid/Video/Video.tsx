@@ -2,7 +2,11 @@ import "./video.css";
 import { useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 
+
 import { useFetchPaidData } from "../customHook";
+
+import axios from "axios";
+
 
 import connectionIocn from "../../../assets/Cellular Connection.png";
 import wifiIcon from "../../../assets/Wifi.svg";
