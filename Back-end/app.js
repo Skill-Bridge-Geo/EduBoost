@@ -10,6 +10,7 @@ import loginRouter from './Routes/login-router.js'
 import logoutRouter from './Routes/logout-router.js'
 import personalisationRouter from './Routes/personalisation-1-router.js'
 import homePageRouter from './Routes/homepage-router.js'
+import profileRouter from './Routes/profile-router.js'
 
 // Environment variables
 dotenv.config()
@@ -30,6 +31,7 @@ app.use(cookieParser())
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ebuqkja.mongodb.net/`
 
 // Routes to access
+app.use('/profile', profileRouter)
 app.use('/register', registerRoute)
 app.use('/login', loginRouter)
 app.use('/logout', logoutRouter)
