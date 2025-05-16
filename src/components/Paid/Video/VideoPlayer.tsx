@@ -1,5 +1,3 @@
-// import { handleVideoEndRef } from "../ChapterDetails/ChapterDetails";
-
 interface Props {
   currentVideo: string;
   setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
@@ -29,7 +27,6 @@ export default function VideoPlayer({
         src={currentVideo}
         controls
         autoPlay
-        // onEnded={h}
         onLoadedMetadata={(e) => {
           const duration = Math.floor(e.currentTarget.duration);
           setTimeLeft(duration);
