@@ -10,7 +10,7 @@ interface Props {
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
-const {data}=useFetchPaidData()
+
 
 export default function ChapterDetails({
   chapter,
@@ -18,6 +18,7 @@ export default function ChapterDetails({
   currentVideo,
   setCurrentVideo,
 }: Props) {
+    const { data } = useFetchPaidData();
   return (
     <div className='main'>
       {chapter.videos.map((video, index) => (
