@@ -16,7 +16,6 @@ p{
     display: grid;
     grid-template-columns: auto;
 }
-<<<<<<< HEAD
 
 .mobile-list::-webkit-scrollbar{
     display: none;
@@ -167,8 +166,6 @@ p{
     display: none;
 }
 /* banner end */
-=======
->>>>>>> 33dc2e65ac3763500021d60e351b0f6e2604d235
 
 /* courses start */
 .main-courses{
