@@ -2,7 +2,7 @@ import { Chapter } from "../../../types";
 import "./chapterDetails.css";
 import { formatTime } from "../Video/VideoPlayer";
 
-// import { useFetchPaidData } from "../customHook";
+import { useFetchPaidData } from "../customHook";
 
 interface Props {
   chapter: Chapter;
@@ -10,7 +10,7 @@ interface Props {
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
-// const {data}=useFetchPaidData()
+const {data}=useFetchPaidData()
 
 export default function ChapterDetails({
   chapter,
