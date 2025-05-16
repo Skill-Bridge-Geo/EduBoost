@@ -22,26 +22,13 @@ export default function ChapterDetails({ chapter }: Props) {
   const [videoDurations, setVideoDurations] = useState<{
     [key: number]: number;
   }>({});
+  const [timeLeft, setTimeLeft] = useState<{ [key: number]: number }>(
+    {}
+  );
 
   const videoRefs = useRef<{
     [key: number]: HTMLVideoElement | null;
   }>({});
-
-  const handlePlay = (id: number) => {
-    const videoElement = videoRefs.current[id];
-    if (videoElement) {
-      videoElement.play().then(() => {
-        const duration = videoElement.duration;
-        if (!isNaN(duration)) {
-          setVideoDurations((prev) => ({
-            ...prev,
-            [id]: Math.floor(duration),
-          }));
-        }
-        videoElement.pause(); // optional: pause after getting duration
-      });
-    }
-  };
 
   return (
     <div className='main'>
@@ -55,12 +42,12 @@ export default function ChapterDetails({ chapter }: Props) {
                   className='playIcon'
                   src={playVideoIcon}
                   alt='playVideoIcon'
-                  onClick={() => handlePlay(video.id)}
+                  onClick={() => videoRefs.current[video.id]?.play()}
                   style={{ cursor: "pointer" }}
                 />
                 <p className='duration'>
-                  {videoDurations[video.id] !== undefined
-                    ? formatTime(videoDurations[video.id])
+                  {timeLeft[video.id] !== undefined
+                    ? formatTime(timeLeft[video.id])
                     : "--:--"}
                 </p>
                 {/* Hidden video element */}
@@ -69,13 +56,30 @@ export default function ChapterDetails({ chapter }: Props) {
                     videoRefs.current[video.id] = el;
                   }}
                   onLoadedMetadata={(e) => {
-                    const videoElement = e.currentTarget;
                     const duration = Math.floor(
-                      videoElement.duration
+                      e.currentTarget.duration
                     );
                     setVideoDurations((prev) => ({
                       ...prev,
                       [video.id]: duration,
+                    }));
+                    setTimeLeft((prev) => ({
+                      ...prev,
+                      [video.id]: duration,
+                    }));
+                  }}
+                  onTimeUpdate={(e) => {
+                    const currentTime = e.currentTarget.currentTime;
+                    const totalDuration = e.currentTarget.duration;
+                   const current = Math.floor(currentTime);
+                   const remaining = Math.max(
+                     Math.floor(totalDuration - current),
+                     0
+                   );
+
+                    setTimeLeft((prev) => ({
+                      ...prev,
+                      [video.id]: remaining,
                     }));
                   }}
                   controls

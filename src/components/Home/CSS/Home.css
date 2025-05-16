@@ -23,6 +23,11 @@ h2, p{
     flex-wrap: nowrap;
     align-items: center;
 }
+
+.mobile-list::-webkit-scrollbar{
+    display: none;
+}
+
 .mobile-list h2{
     font-weight: 400;
     font-size: 14px;
@@ -35,6 +40,11 @@ h2, p{
     align-items: center;
     position: relative;
 }
+
+.mobile-list h2:hover{
+    cursor: pointer;
+}
+
 .active h2{
     color: #3DCBB1;
 }
