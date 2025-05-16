@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./CSS/home.css";
+import "./CSS/Home.css";
 import "./CSS/webinar&sub.css";
 import WebinarPicture from "../../assets/Instructor4.png";
 import SubscriptionImage from "../../assets/Aare.png";
