@@ -6,7 +6,7 @@ import { CourseData } from "../../../types";
 import QuestionAnswerDiv from "./QuestionAnswerDiv";
 
 interface props {
-  currentVideo:string
+  currentVideo: string;
   setCurrentVideo: React.Dispatch<React.SetStateAction<string>>;
   timeLeft: number;
 }
