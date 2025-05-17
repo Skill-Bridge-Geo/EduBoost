@@ -45,17 +45,6 @@ export default function QuestionAnswerDiv({
               {formatTime(chapter.totalDuration)}
             </span>
           </div>
-
-          <p className='chapter-details-info'>
-            <p>
-              1/<span>{chapter.videos.length} Videos</span>
-            </p>
-            <img src={dotIcon} alt='dot icon' />{" "}
-            <span className='total-duration'>
-              {chapter.totalDuration}
-            </span>
-          </p>
-
         </div>
         <img
           className={`arrow-icon ${isActive ? "arrow-rotated" : ""}`}
@@ -100,15 +89,7 @@ export default function QuestionAnswerDiv({
 
       <div
         className={`chapter-details ${isActive ? "showAnswer" : ""}`}
-        style={{
-          height,
-          padding: isActive ? "15px" : "0px",
-        }}
-        ref={contentRef}
-      >
-        
-      </div>
-
+      ></div>
     </div>
   );
 }
