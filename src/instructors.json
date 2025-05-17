@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Alexander Bastian",
+        "position": "Mobile Engineer",
+        "imgURL": ""
+    },
+    {
+        "id": 2,
+        "name": "Labie Carthaline",
+        "position": "Marketing Specialist",
+        "imgURL": ""
+    },
+    {
+        "id": 3,
+        "name": "Jonathan Doe",
+        "position": "Financial Strategiest",
+        "imgURL": ""
+    },
+    {
+        "id": 4,
+        "name": "Kitani Sarasvati",
+        "position": "Film Maker & Director",
+        "imgURL": ""
+    }
+]

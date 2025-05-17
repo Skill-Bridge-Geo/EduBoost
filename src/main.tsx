@@ -5,7 +5,6 @@ import './index.css'
 import App from './App.tsx'
 
 const Home = React.lazy(() => import("./components/Home/Home"));
-const Login = React.lazy(() => import("./components/Login/Login"));
 
 
 const router = createBrowserRouter([
@@ -14,7 +13,6 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/Login", element: <Login /> },
     ]
   }
 ])

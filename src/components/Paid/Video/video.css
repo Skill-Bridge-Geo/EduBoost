@@ -6,6 +6,10 @@
 .header {
   display: none;
 }
+.video {
+  width: 100%;
+  min-height: 212px;
+}
 
 .mobileTools {
   display: flex;
@@ -27,6 +31,7 @@
 }
 .video-container {
   padding: 11px 0 0px;
+
 }
 .course-raitings {
   padding: 19px 16px 29px 16px;
@@ -127,7 +132,7 @@
   height: 1.5px;
   width: 56px;
   background-color: rgb(83, 209, 83);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 /* @media (min-width: 768px) {

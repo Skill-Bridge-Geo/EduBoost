@@ -1,30 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+interface Props {
+  currentVideo: string;
+  setTimeLeft: React.Dispatch<React.SetStateAction<number>>;
+}
 
-export default function VideoPlayer() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [currentTime, setCurrentTime] = useState(0);
+export function formatTime(seconds: number) {
+  const hrs = Math.floor(seconds / 3600);
+  const mins = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  const pad = (n: number) => n.toString();
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    const handleTimeUpdate = () => {
-      setCurrentTime(video.currentTime);
-    };
-    video.addEventListener("timeupdate", handleTimeUpdate);
+  return hrs > 0
+    ? `${pad(hrs)}h ${pad(mins)}m`
+    : mins > 1
+    ? `${pad(mins)}m`
+    : `${pad(secs)}s`;
+}
 
-    return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-    };
-  }, []);
-
+export default function VideoPlayer({
+  currentVideo,
+  setTimeLeft,
+}: Props) {
   return (
     <div>
       <video
-        ref={videoRef}
+        className='video'
+        src={currentVideo}
         controls
-        width='100%'
-        height='100px'
-        src='https://www.w3schools.com/html/mov_bbb.mp4'
+        autoPlay
+        onLoadedMetadata={(e) => {
+          const duration = Math.floor(e.currentTarget.duration);
+          setTimeLeft(duration);
+        }}
+        onTimeUpdate={(e) => {
+          const duration = Math.floor(e.currentTarget.duration);
+          const current = Math.floor(e.currentTarget.currentTime);
+          setTimeLeft(Math.max(duration - current, 0));
+        }}
       />
     </div>
   );

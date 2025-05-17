@@ -1,0 +1,225 @@
+.parent-webinar{
+    width: 100%;
+    padding: 0 20px 24px;
+}
+.webinar{
+    width: 100%;
+    height: 285px;
+    background-color: #3DCBB1;
+    border-radius: 3px;
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 14px 0 16px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+.image-container1{
+    position: absolute;
+    top: 0;
+    right: -93px;
+    height: 400px;
+    width: 285px;
+    overflow: hidden;
+    z-index: -1;
+}
+.webinar-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 192px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(201, 59, 59, 0.25) 70%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: 1;
+}
+.image-container1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.web-header h1{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+}
+.web-header p{
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    letter-spacing: 0%;
+    color: #F9F9F9E5;
+}
+.web-info h1{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: 1.5px;
+    color: #FFFFFF;
+    max-width: 150px;
+    margin-bottom: 8px;
+}
+.web-info p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+}
+.web-button{
+    width: 95px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+}
+.web-button h1{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #FFFFFF;
+}
+
+.subscription{
+    display: none;
+}
+
+@media only screen and (min-width: 1024px){
+    .parent-webinar{
+        display: none;
+    }
+
+    .subscription{
+        overflow: hidden;
+        margin: 0 5px 80px;
+        padding: 0 32px;
+        display: flex;
+        width: 100%;
+        height: 184px;
+        border-radius: 12px;
+        background-color: #2273D1;
+        position: relative;
+        z-index: 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sub-background{
+        width: 369px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 45px;
+        z-index: -1;
+    }
+    .sub-font{
+        width: 100%;
+        max-width: 390px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 42px;
+        color: #FFFFFF;
+    }
+    .sub-font2{
+        display: none;
+    }
+    .email-area{
+        height: 41px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+    .email-area input{
+        width: 289px;
+        height: 100%;
+        padding-left: 12px;
+        border-radius: 3px;
+        background-color: rgba(249, 249, 249, 0.3);
+        border: none;
+        outline: none;
+
+        font-family: 'Girloy-Medium', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #FFFFFF;
+    }
+    .email-area input::placeholder{
+        font-family: 'Gilroy-Medium', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #FFFFFF;
+        opacity: 0.6;
+    }
+    .email-area button{
+        width: 110px;
+        height: 100%;
+        background-color: #3DCBB1;
+        border-radius: 3px;
+        border: none;
+        cursor: pointer;
+    }
+    .email-area button h1{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        color: #FFFFFF;
+    }
+    .search-icon{
+        color: #FFFFFF;
+        font-size: 22px;
+        position: absolute;
+        left: 255px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .subscription{
+        margin: 0 0 80px;
+        padding: 0 60px;
+    }
+    .sub-background{
+        right: -69px;
+    }
+    .sub-font{
+        display: none;
+    }
+    .sub-font2{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 4px;
+        cursor: default;
+    }
+    .sub-font2 h1{
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 42px;
+        color: #FFFFFF;
+    }
+    .sub-font2 p{
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FFFFFF99;
+    }
+    .email-area{
+        gap: 16px;
+    }
+    .email-area input{
+        width: 243px;
+    }
+    .search-icon{
+        left: 210px;
+    }
+}

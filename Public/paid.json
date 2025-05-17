@@ -7,11 +7,7 @@
 
     "views": 2300,
     "likes": 1400,
-    "video": {
-      "duration": "59:00",
-      "currentTime": "12:00",
-      "url": "https://www.w3schools.com/html/mov_bbb.mp4"
-    },
+
     "description": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries."
   },
   "reviews": [
@@ -46,21 +42,30 @@
       "title": "Chapter 1: Course Overview",
       "totalVideos": 12,
       "watchedVideos": 1,
-      "totalDuration": "28m",
+      "totalDuration": 1620,
       "videos": [
         {
           "id": 1,
           "title": "Installing Vue JS",
-          "duration": 600,
-          "status": "completed",
-          "videoUrl": "https://www.example.com/video1.mp4"
+          "duration": 420,
+          "status": "locked",
+          "isCurrent": true,
+          "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
         },
         {
           "id": 2,
           "title": "Understand Vue Components",
-          "duration": 3540,
-          "status": "playing",
-          "videoUrl": "https://www.example.com/video2.mp4"
+          "duration": 510,
+          "status": "locked",
+          "isCurrent": false,
+          "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
+        },
+        {
+          "id": 3,
+          "title": "Understand Vue Components222",
+          "duration": 763,
+          "status": "locked",
+          "videoUrl": "https://filesamples.com/samples/video/mp4/sample_640x360.mp4"
         }
       ]
     },
@@ -69,19 +74,20 @@
       "title": "Chapter 2: Curriculum",
       "totalVideos": 12,
       "watchedVideos": 1,
-      "totalDuration": "1h 28m",
+      "totalDuration": 2323,
       "videos": [
         {
           "id": 1,
           "title": "Vue Templating",
-          "duration": 720,
+          "duration": 1763,
           "status": "locked",
+          "isCurrent": false,
           "videoUrl": "https://www.example.com/video3.mp4"
         },
         {
           "id": 2,
           "title": "Vue Forms",
-          "duration": 1380,
+          "duration": 1463,
           "status": "locked",
           "videoUrl": "https://www.example.com/video4.mp4"
         }
@@ -92,13 +98,14 @@
       "title": "Chapter 3: Components",
       "totalVideos": 12,
       "watchedVideos": 0,
-      "totalDuration": "1h 28m",
+      "totalDuration": "12",
       "videos": [
         {
           "id": 1,
           "title": "Component Basics",
-          "duration": 900,
+          "duration": 2363,
           "status": "locked",
+          "isCurrent": false,
           "videoUrl": "https://www.example.com/video5.mp4"
         }
       ]

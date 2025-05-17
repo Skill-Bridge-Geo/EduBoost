@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { z, ZodType } from "zod";
+import {useForm} from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image1 from "../../assets/registration/reg-img1.png";
 import Image2 from "../../assets/registration/reg-img2.png";
 import Profile from "../../assets/registration/profile.svg";
@@ -7,23 +10,40 @@ import Logo from "../../assets/registration/Logo.svg";
 import Facebook from "../../assets/registration/Facebook.svg";
 import Apple from "../../assets/registration/Apple.svg";
 import Google from "../../assets/registration/Google.svg";
-import { MdMailOutline } from "react-icons/md";
-import { IoMdLock, IoMdUnlock } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
+import { MdMailOutline, MdShoppingCart } from "react-icons/md";
+import { IoMdLock, IoMdUnlock, IoMdSearch } from "react-icons/io";
+import { IoClose, IoArrowBackOutline } from "react-icons/io5";
 import "./Login.css";
 
 type FormData = {
   email?: string;
   password?: string;
+  onClose?: () => void;
 };
 
-const Login = ({ email, password }: FormData) => {
+const Login = ({ email, password, onClose }: FormData) => {
   const [isLoginView, setIsLoginView] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
   const passwordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const userSchema: ZodType<FormData> = z
+    .object({
+      email: z.string().email(),
+      password: z.string().min(6).max(20),
+    })
+    .refine((data) => data.password, {
+      message: "Password do not match",
+    });
+
+    const {register, handleSubmit} = useForm<FormData>({resolver: zodResolver(userSchema)})
+    
+    const submitData = (data: FormData) => {
+      console.log("asdasd", data);
+      
+    }
 
   return (
     <div className="login_registration_container">
@@ -51,11 +71,24 @@ const Login = ({ email, password }: FormData) => {
 
         <div className="login_registration_form">
           <div className="logo_image">
-            <img src={Logo} alt="Logo" className="logo" />
+            <div className="left_side">
+              <button className="return_icon" onClick={onClose}>
+                <IoArrowBackOutline />
+              </button>
+              <img src={Logo} alt="Logo" className="logo" />
+            </div>
+            <div className="rigth_side">
+              <button className="cart_icon">
+                <MdShoppingCart />
+              </button>
+              <button className="search_icon">
+                <IoMdSearch />
+              </button>
+            </div>
           </div>
-          <div className="close">
+          <button className="close" onClick={onClose}>
             <IoClose />
-          </div>
+          </button>
           <p className="login_head">
             Join us and get more benefits. We promise to keep your data safely.
           </p>
@@ -67,6 +100,7 @@ const Login = ({ email, password }: FormData) => {
                   placeholder="Enter Your Email"
                   className="email_input"
                   value={email}
+                  {...register("email")}
                 />
                 <div className="icon">
                   <MdMailOutline />
@@ -78,6 +112,7 @@ const Login = ({ email, password }: FormData) => {
                   placeholder="Password"
                   className="password_input"
                   value={password}
+                  {...register("password")}
                 />
                 <div className="icon" onClick={passwordVisibility}>
                   {showPassword ? <IoMdUnlock /> : <IoMdLock />}
@@ -98,12 +133,13 @@ const Login = ({ email, password }: FormData) => {
               </button>
               <div className="account_question">
                 <p className="question">Need an Account?</p>
-                <p
+                <button
                   className={`sign_up ${isLoginView ? "active" : ""}`}
                   onClick={() => setIsLoginView(false)}
+                  onSubmit={handleSubmit(submitData)}
                 >
                   Sign Up
-                </p>
+                </button>
               </div>
             </div>
           ) : (
@@ -145,9 +181,12 @@ const Login = ({ email, password }: FormData) => {
               <button id="creat_account">Creat Account</button>
               <div className="account_question">
                 <p className="question">Already have an Account?</p>
-                <p className="sign_up" onClick={() => setIsLoginView(true)}>
-                  Sign Up
-                </p>
+                <button
+                  className="sign_up"
+                  onClick={() => setIsLoginView(true)}
+                >
+                  Login
+                </button>
               </div>
             </div>
           )}

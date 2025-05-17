@@ -13,18 +13,22 @@ export type Review = {
 };
 
 export type ChapterVideo = {
+  id: number;
   title: string;
-  duration: string;
+  duration: number;
   status: "completed" | "playing" | "locked";
-  url: string;
+  isCurrent: boolean;
+  videoUrl: string;
 };
 
 export type Chapter = {
   title: string;
   videosCount: number;
-  totalDuration: string;
+  totalDuration: number;
   videos: ChapterVideo[];
 };
+
+export type Chapters = Chapter[];
 
 export type Course = {
   coverSubtitle: string;
