@@ -329,3 +329,6 @@
     background-color: #c42a22;
   }
 }
+.error_border{
+  border: 1px solid red !important;
+}
