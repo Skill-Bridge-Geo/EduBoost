@@ -21,8 +21,8 @@ const SingleCart: React.FC<{
             </div>
             <h1 className="title">{myCart.title}</h1>
             <div className="instructor">
-                <MdOutlinePersonOutline style={{color: "#1B1B1B99", height: "15px"}}/>
-                <h2>{myCart.instructor}</h2>
+                <MdOutlinePersonOutline style={{color: "#1B1B1B99"}} className="intr-person-icon"/>
+                <p>{myCart.instructor}</p>
             </div>
             <p className="text">{myCart.text}</p>
             <div className="rate">
@@ -40,11 +40,11 @@ const SingleCart: React.FC<{
                         </label>
                     );
                 })}
-                <h2 className="reviews">&#40;{myCart.reviews}&#41;</h2>
+                <p className="reviews">&#40;{myCart.reviews}&#41;</p>
             </div>
             <div className="price">
                 <h1>{myCart.newPrice}</h1>
-                <h2>{myCart.oldPrice}</h2>
+                <p>{myCart.oldPrice}</p>
             </div>
         </div> 
     );
