@@ -18,6 +18,7 @@ export default function ChapterDetails({
   setCurrentVideo,
 }: Props) {
   const { data } = useFetchPaidData();
+  console.log(data);
   return (
     <div className='main'>
       {chapter.videos.map((video, index) => (
