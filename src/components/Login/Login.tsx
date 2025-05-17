@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z, ZodType } from "zod";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image1 from "../../assets/registration/reg-img1.png";
 import Image2 from "../../assets/registration/reg-img2.png";
@@ -16,34 +16,39 @@ import { IoClose, IoArrowBackOutline } from "react-icons/io5";
 import "./Login.css";
 
 type FormData = {
-  email?: string;
-  password?: string;
+  email: string;
+  password: string;
+};
+
+type Props = {
   onClose?: () => void;
 };
 
-const Login = ({ email, password, onClose }: FormData) => {
-  const [isLoginView, setIsLoginView] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
+const userSchema: ZodType<FormData> = z.object({
+  email: z.string().email({ message: "Invalid email address" }),
+  password: z.string().min(6, { message: "Password too short" }).max(20),
+});
+
+const Login = ({ onClose }: Props) => {
+  const [isLoginView, setIsLoginView] = useState<boolean>(true);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const passwordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const userSchema: ZodType<FormData> = z
-    .object({
-      email: z.string().email(),
-      password: z.string().min(6).max(20),
-    })
-    .refine((data) => data.password, {
-      message: "Password do not match",
-    });
-
-    const {register, handleSubmit} = useForm<FormData>({resolver: zodResolver(userSchema)})
-    
-    const submitData = (data: FormData) => {
-      console.log("asdasd", data);
-      
-    }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(userSchema),
+  });
+  const onSubmit = (data: FormData) => {
+    console.log(isLoginView ? "Logging in:" : "Signing up:", data);
+    reset();
+  };
 
   return (
     <div className="login_registration_container">
@@ -92,104 +97,115 @@ const Login = ({ email, password, onClose }: FormData) => {
           <p className="login_head">
             Join us and get more benefits. We promise to keep your data safely.
           </p>
-          {isLoginView ? (
-            <div className="login_container">
-              <div className="email">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="email_input"
-                  value={email}
-                  {...register("email")}
-                />
-                <div className="icon">
-                  <MdMailOutline />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {isLoginView ? (
+              <div className="login_container">
+                <div className="email">
+                  <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    className={`email_input ${
+                      errors.email ? "error_border" : ""
+                    }`}
+                    {...register("email")}
+                  />
+                  <div className="icon">
+                    <MdMailOutline />
+                  </div>
+                  {/* {errors.email && <p className="error">{errors.email.message}</p>} */}
                 </div>
-              </div>
-              <div className="password">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="password_input"
-                  value={password}
-                  {...register("password")}
-                />
-                <div className="icon" onClick={passwordVisibility}>
-                  {showPassword ? <IoMdUnlock /> : <IoMdLock />}
+                <div className="password">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className={`password_input ${
+                      errors.password ? "error_border" : ""
+                    }`}
+                    {...register("password")}
+                  />
+                  <div className="icon" onClick={passwordVisibility}>
+                    {showPassword ? <IoMdUnlock /> : <IoMdLock />}
+                  </div>
                 </div>
-              </div>
-              <button id="log_in">Login</button>
-              <p className="choose_question">or you can</p>
-              <button className="facebook_account">
-                <img src={Facebook} alt="Facebook" /> Continue with Facebook
-              </button>
-              <button className="apple_account">
-                <img src={Apple} alt="Apple" />
-                Continue with Apple
-              </button>
-              <button className="google_account">
-                <img src={Google} alt="Google" />
-                Continue with Google
-              </button>
-              <div className="account_question">
-                <p className="question">Need an Account?</p>
-                <button
-                  className={`sign_up ${isLoginView ? "active" : ""}`}
-                  onClick={() => setIsLoginView(false)}
-                  onSubmit={handleSubmit(submitData)}
-                >
-                  Sign Up
+                <button id="log_in">Login</button>
+                <p className="choose_question">or you can</p>
+                <button className="facebook_account">
+                  <img src={Facebook} alt="Facebook" /> Continue with Facebook
                 </button>
-              </div>
-            </div>
-          ) : (
-            <div className="registration_container">
-              <button className="facebook_account">
-                <img src={Facebook} alt="Facebook" /> Sign Up with Facebook
-              </button>
-              <button className="apple_account">
-                <img src={Apple} alt="Apple" />
-                Sign Up with Apple
-              </button>
-              <button className="google_account">
-                <img src={Google} alt="Google" />
-                Sign Up with Google
-              </button>
-              <p className="choose_question">or you can</p>
-              <div className="email">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="email_input"
-                  value={email}
-                />
-                <div className="icon">
-                  <MdMailOutline />
-                </div>
-              </div>
-              <div className="password">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="password_input"
-                  value={password}
-                />
-                <div className="icon" onClick={passwordVisibility}>
-                  {showPassword ? <IoMdUnlock /> : <IoMdLock />}
-                </div>
-              </div>
-              <button id="creat_account">Creat Account</button>
-              <div className="account_question">
-                <p className="question">Already have an Account?</p>
-                <button
-                  className="sign_up"
-                  onClick={() => setIsLoginView(true)}
-                >
-                  Login
+                <button className="apple_account">
+                  <img src={Apple} alt="Apple" />
+                  Continue with Apple
                 </button>
+                <button className="google_account">
+                  <img src={Google} alt="Google" />
+                  Continue with Google
+                </button>
+                <div className="account_question">
+                  <p className="question">Need an Account?</p>
+                  <button
+                    className={`sign_up ${isLoginView ? "active" : ""}`}
+                    type="button"
+                    onClick={() => setIsLoginView(false)}
+                    // onSubmit={handleSubmit(submitData)}
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="registration_container">
+                <button className="facebook_account">
+                  <img src={Facebook} alt="Facebook" /> Sign Up with Facebook
+                </button>
+                <button className="apple_account">
+                  <img src={Apple} alt="Apple" />
+                  Sign Up with Apple
+                </button>
+                <button className="google_account">
+                  <img src={Google} alt="Google" />
+                  Sign Up with Google
+                </button>
+                <p className="choose_question">or you can</p>
+                <div className="email">
+                  <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    className={`email_input ${
+                      errors.email ? "error_border" : ""
+                    }`}
+                    {...register("email")}
+                  />
+                  <div className="icon">
+                    <MdMailOutline />
+                  </div>
+                </div>
+                <div className="password">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className={`password_input ${
+                      errors.password ? "error_border" : ""
+                    }`}
+                    {...register("password")}
+                  />
+                  <div className="icon" onClick={passwordVisibility}>
+                    {showPassword ? <IoMdUnlock /> : <IoMdLock />}
+                  </div>
+                </div>
+                <button id="creat_account">Creat Account</button>
+                <div className="account_question">
+                  <p className="question">Already have an Account?</p>
+                  <button
+                    className="sign_up"
+                    type="button"
+                    onClick={() => setIsLoginView(true)}
+                  >
+                    Login
+                  </button>
+                </div>
+              </div>
+            )}
+          </form>
         </div>
       </div>
     </div>

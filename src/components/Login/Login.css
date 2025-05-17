@@ -8,7 +8,7 @@
   position: fixed;
   display: flex;
   justify-content: space-evenly;
-  /* align-items: center; */
+  align-items: center;
   width: 100vw;
   height: 100vh;
   z-index: 99;
@@ -328,4 +328,7 @@
   .login_registration_form #creat_account {
     background-color: #c42a22;
   }
+}
+.error_border{
+  border: 1px solid red !important;
 }
