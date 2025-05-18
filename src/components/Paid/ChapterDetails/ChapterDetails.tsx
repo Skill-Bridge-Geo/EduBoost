@@ -20,7 +20,7 @@ export default function ChapterDetails({
   const { data } = useFetchPaidData();
   console.log(data);
   return (
-    <div className='main'>
+    <div className='mainDiv'>
       {chapter.videos.map((video, index) => (
         <div
           className={`video-wrapper ${

@@ -1,7 +1,6 @@
-
+import { useFetchPaidData } from "../customHook";
 
 export default function About() {
-  return (
-    <div>About</div>
-  )
+  const { data } = useFetchPaidData();
+  return <p className='about'>{data?.course.description}</p>;
 }

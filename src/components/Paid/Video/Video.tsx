@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 import Review from "./Review";
 import About from "./About";
-
 import { useFetchPaidData } from "../customHook";
-
-// import connectionIocn from "../../../assets/Cellular Connection.png";
-// import wifiIcon from "../../../assets/Wifi.svg";
-// import batteryIcon from "../../../assets/Battery.svg";
 import checkedIcon from "../../../assets/checked.svg";
 import signedIcon from "../../../assets/signed.svg";
 import Header from "../../Header/Header";
@@ -19,6 +14,7 @@ export default function Video() {
   const [isSelected, setIsSelected] = useState<string>("Courses");
   const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,14 +37,6 @@ export default function Video() {
           <div className='header'>
             <Header />
           </div>
-          {/* <div className='mobileTools'>
-          <p>9:41</p>
-          <div className='tools'>
-            <img src={connectionIocn} alt='connection Iocn' />
-            <img src={wifiIcon} alt='wifi Icon' />
-            <img src={batteryIcon} alt='battery Icon' />
-          </div>
-        </div> */}
           <div className='video-container'>
             <VideoPlayer
               currentVideo={currentVideo}
@@ -134,6 +122,22 @@ export default function Video() {
           )}
         </section>
       </div>
+      <section
+        
+        className='second-section'
+      >
+        <div className="scroll-options">
+          <div className='about-desktop'>
+            <h2 className="info-title">About Course</h2>
+            <About />
+          </div>
+          <div className='review-desktop'>
+            <h2 className="info-title">Review</h2>
+            <Review />
+          </div>
+        </div>
+        <div></div>
+      </section>
     </div>
   );
 }
