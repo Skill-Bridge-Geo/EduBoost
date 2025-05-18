@@ -1,5 +1,5 @@
 import "./video.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import VideoPlayer from "./VideoPlayer";
 import Review from "./Review";
 import About from "./About";
@@ -19,6 +19,18 @@ export default function Video() {
   const [isSelected, setIsSelected] = useState<string>("Courses");
   const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsSelected("Courses");
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (!data) return <div>Loading...</div>;
 
