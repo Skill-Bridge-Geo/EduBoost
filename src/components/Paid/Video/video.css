@@ -9,7 +9,6 @@
   width: 100%;
   min-height: 212px;
 }
-
 .mobileTools {
   display: flex;
   align-items: center;
@@ -30,7 +29,7 @@
 }
 
 .course-raitings {
-  padding: 19px 16px 29px 16px;
+  padding: 19px 16px 29px;
 }
 .course-raitings h2 {
   color: #000;
@@ -139,17 +138,93 @@
   background-color: rgb(83, 209, 83);
   transition: transform 0.2s ease;
 }
-.CourseOption {
+
+.second-section {
   display: none;
 }
-
+.review-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.avatar-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.avatar-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.avatar-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+}
+.avatar-name {
+  color: #3dcbb1;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+.avatar-time {
+  color: rgba(27, 27, 27, 0.1);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 15px; /* 150% */
+}
+.avatar-comment {
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  max-width: 294px;
+}
+.about {
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 818px;
+}
 @media (min-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 60px 24px;
+  }
+  .about {
+      max-width: 645px;
+  }
   .parent {
     display: flex;
     flex-direction: row;
     gap: 22px;
-    padding: 60px 60px 24px;
     justify-content: center;
+  }
+  .info-title {
+    padding-bottom: 10px;
+    color: #000;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+  }
+
+  .avatar-name {
+    font-size: 16px;
+  }
+.about {
+    font-size: 16px;
+}
+  .scroll-options {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .course-raitings {
+    padding: 19px 0px 23px;
   }
   .first-child {
     width: 100%;
@@ -166,13 +241,13 @@
   .video {
     border-radius: 18px;
     min-height: 230px;
-    min-width: 400px;
+    min-width: 550px;
   }
   .course-hr {
     display: block;
   }
-  .main {
-    display: flex;
-    flex-direction: column;
+
+  .second-section {
+    display: block;
   }
 }
