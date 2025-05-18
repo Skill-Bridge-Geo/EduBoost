@@ -26,6 +26,7 @@
   background-color: #ffffff;
   border-radius: 8px;
   margin: 40px auto;
+  overflow: hidden;
 }
 .login_registration_container .login_registration .image_container {
   position: relative;
