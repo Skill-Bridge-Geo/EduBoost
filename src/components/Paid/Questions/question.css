@@ -2,7 +2,6 @@
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
-  gap: 18px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -13,13 +12,12 @@
   gap: 4px;
 }
 .chapter-details-info {
-    display: flex;
-    gap: 5px;
-    color: rgba(27, 27, 27, 0.60);
-
+  display: flex;
+  gap: 5px;
+  color: rgba(27, 27, 27, 0.6);
 }
 .total-duration {
-    color: #3DCBB1;
+  color: #3dcbb1;
 }
 
 .chapter-title {
@@ -35,7 +33,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 12px;
+  padding: 11px 12px;
 }
 .arrow-icon {
   transition: 0.4s;
@@ -48,9 +46,8 @@
 .chapter-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
   overflow: hidden;
-  overflow: hidden;
-  transition: height 0.3s ease, padding 0.3s ease-in-out;
+  /* border-radius: 0; */
   background: rgba(249, 249, 249, 0.9);
 }
