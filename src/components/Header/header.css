@@ -23,6 +23,7 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: #fff;
+  flex-wrap: nowrap;
 }
 
 .left-side-wrap {
@@ -91,7 +92,7 @@ header {
 }
 
 .sign-up-button {
-  padding: 0.5rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 0.9rem;
   background-color: transparent;
   font-family: "Gilroy-Bold";
@@ -102,6 +103,7 @@ header {
   font-size: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
 }
 
@@ -109,7 +111,7 @@ header {
   width: 1.3rem;
 }
 
-.login_modal_overlay{
+.login_modal_overlay {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -118,12 +120,12 @@ header {
   z-index: 999;
 }
 
-
 /* Tablet */
 
-@media only screen and (min-width: 48rem) {
+@media only screen and (min-width: 768px) {
   header {
     padding: 1.8rem 3.2rem;
+    gap: 3rem;
   }
 
   .left-side-wrap {
@@ -132,15 +134,22 @@ header {
 
   .right-side-wrap {
     align-items: center;
+    gap: 2.4rem;
+    min-width: 0;
   }
 
   .input-div {
     display: block;
     position: relative;
+    width: 100%;
+    min-width: 20rem;
+    max-width: 40rem;
   }
 
   .search-input {
-    width: 40rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     background-color: #f9f9f9e5;
     border: none;
     font-size: 1.6rem;
@@ -189,11 +198,15 @@ header {
   .sign-up-icon {
     width: 1.5rem;
   }
+
+  .sign-up-button {
+    width: 9.9rem;
+  }
 }
 
 /* Desktop */
 
-@media only screen and (min-width: 90rem) {
+@media only screen and (min-width: 1440px) {
   header {
     padding: 1.8rem 11.8rem;
   }
@@ -228,8 +241,8 @@ header {
   }
 }
 
-@media screen and (max-width: 385px) {
-  header{
+@media screen and (max-width: 365px) {
+  header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
