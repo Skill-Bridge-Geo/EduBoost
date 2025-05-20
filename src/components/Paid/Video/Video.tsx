@@ -14,6 +14,7 @@ export default function Video() {
   const [isSelected, setIsSelected] = useState<string>("Courses");
   const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
+  const [loadMore, setLoadMore] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -72,10 +73,17 @@ export default function Video() {
               </div>
               <div className='review-desktop'>
                 <h2 className='info-title'>Review</h2>
-                <Review />
+                <Review loadMore={loadMore} />
               </div>
             </div>
-            <div></div>
+            <button
+              className='loadMore'
+              onClick={() => setLoadMore(!loadMore)}
+            >
+              {`${
+                loadMore ? "Load less review" : "Load more review"
+              }`}
+            </button>
           </section>
         </section>
         <section className='second-child'>
@@ -128,25 +136,12 @@ export default function Video() {
               timeLeft={timeLeft}
             />
           ) : isSelected === "Review" ? (
-            <Review />
+            <Review loadMore={loadMore} />
           ) : (
             <About />
           )}
         </section>
       </div>
-      <section className='second-section'>
-        <div className='scroll-options'>
-          <div className='about-desktop'>
-            <h2 className='info-title'>About Course</h2>
-            <About />
-          </div>
-          <div className='review-desktop'>
-            <h2 className='info-title'>Review</h2>
-            <Review />
-          </div>
-        </div>
-        <div></div>
-      </section>
     </div>
   );
 }
