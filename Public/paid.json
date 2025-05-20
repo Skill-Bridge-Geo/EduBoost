@@ -10,32 +10,57 @@
 
     "description": "Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries."
   },
- "reviews": [
-  {
-    "name": "Leonardo Da Vinci",
-    "time": "Today",
-    "avatar": "https://i.pravatar.cc/150?img=1",
-    "comment": "Loved the course. I've learned some very subtle techniques."
-  },
-  {
-    "name": "Titania S",
-    "time": "Today",
-    "avatar": "https://i.pravatar.cc/150?img=2",
-    "comment": "I loved the course, it had been a long time since I had experimented with watercolors and now I will do it more often thanks to Kitani Studio."
-  },
-  {
-    "name": "Zhrikov",
-    "time": "Today",
-    "avatar": "https://i.pravatar.cc/150?img=3",
-    "comment": "Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher."
-  },
-  {
-    "name": "Miphisaka",
-    "time": "Today",
-    "avatar": "https://i.pravatar.cc/150?img=4",
-    "comment": "I haven't finished the course yet, as I would like to have some feedback from the teacher, about the comments I shared on the forum 3 months ago, and I still haven't had any answer. I think the course is well structured, however the explanations and videos are very quick for beginners. However, it is good to go practicing."
-  }
-],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Leonardo Da Vinci",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "comment": "Loved the course. I've learned some very subtle techniques."
+    },
+    {
+      "id": 2,
+      "name": "Titania S",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "comment": "I loved the course, it had been a long time since I had experimented with watercolors and now I will do it more often thanks to Kitani Studio."
+    },
+    {
+      "id": 3,
+      "name": "Zhrikov",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "comment": "Yes. I just emphasize that the use of Photoshop, for non-users, becomes difficult to follow. What requires a course to master it. Safe and very didactic teacher."
+    },
+    {
+      "id": 4,
+      "name": "Miphisaka",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=4",
+      "comment": "I haven't finished the course yet, as I would like to have some feedback from the teacher, about the comments I shared on the forum 3 months ago, and I still haven't had any answer. I think the course is well structured, however the explanations and videos are very quick for beginners. However, it is good to go practicing."
+    },
+    {
+      "id": 5,
+      "name": "Elena K.",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=5",
+      "comment": "Great content and very inspiring! I especially enjoyed the part on color theory—really helped me improve my palette choices."
+    },
+    {
+      "id": 6,
+      "name": "Samuel N.",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=6",
+      "comment": "The pacing was perfect for me. Not too fast, not too slow. Would recommend to anyone getting into digital painting."
+    },
+    {
+      "id": 7,
+      "name": "Aya R.",
+      "time": "Today",
+      "avatar": "https://i.pravatar.cc/150?img=7",
+      "comment": "Beautifully structured course! I appreciated how each section built on the last. Looking forward to more from this studio."
+    }
+  ],
 
   "chapters": [
     {
