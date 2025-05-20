@@ -7,9 +7,11 @@ const Footer = React.lazy(() => import("./components/Footer/Footer"));
 function App() {
   return (
     <>
+
       <Header />
       <Outlet />
       <Footer />
+      
     </>
   );
 }
