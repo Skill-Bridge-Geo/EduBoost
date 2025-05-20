@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z, ZodType } from "zod";
-import {useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image1 from "../../assets/registration/reg-img1.png";
 import Image2 from "../../assets/registration/reg-img2.png";
@@ -13,61 +13,111 @@ import Google from "../../assets/registration/Google.svg";
 import { MdMailOutline, MdShoppingCart } from "react-icons/md";
 import { IoMdLock, IoMdUnlock, IoMdSearch } from "react-icons/io";
 import { IoClose, IoArrowBackOutline } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Login.css";
 
 type FormData = {
-  email?: string;
-  password?: string;
+  email: string;
+  password: string;
+};
+
+type Props = {
   onClose?: () => void;
 };
 
-const Login = ({ email, password, onClose }: FormData) => {
-  const [isLoginView, setIsLoginView] = useState(true);
-  const [showPassword, setShowPassword] = useState(false);
+const userSchema: ZodType<FormData> = z.object({
+  email: z.string().email({ message: "Invalid email address" }),
+  password: z.string().min(6, { message: "Password too short" }).max(20),
+});
+
+const Login = ({ onClose }: Props) => {
+  const [isLoginView, setIsLoginView] = useState<boolean>(true);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const passwordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const userSchema: ZodType<FormData> = z
-    .object({
-      email: z.string().email(),
-      password: z.string().min(6).max(20),
-    })
-    .refine((data) => data.password, {
-      message: "Password do not match",
-    });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(userSchema),
+  });
+  const onSubmit = (data: FormData) => {
+    console.log(isLoginView ? "Logging in:" : "Signing up:", data);
+    reset();
+  };
 
-    const {register, handleSubmit} = useForm<FormData>({resolver: zodResolver(userSchema)})
-    
-    const submitData = (data: FormData) => {
-      console.log("asdasd", data);
-      
-    }
+  const imageVariants = {
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 120,
+        damping: 20,
+      },
+    },
+    exit: {
+      x: -100,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const loginVariants = {
+    hidden: { opacity: 0, y: -100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, y: 100, transition: { duration: 0.3 } },
+  };
+
+  const registerVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0, y: -100, transition: { duration: 0.3 } },
+  };
 
   return (
     <div className="login_registration_container">
       <div className="login_registration">
-        <div className="image_container">
-          <img src={isLoginView ? Image1 : Image2} alt="Decoration" />
-          <div className="reg_info">
-            <div className="logo_image">
-              <img
-                src={isLoginView ? Profile : Profile2}
-                alt="Logo"
-                className="logo"
-              />
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="image_container"
+            key={isLoginView ? "image-login" : "image-register"}
+            variants={imageVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            <img src={isLoginView ? Image1 : Image2} alt="Decoration" />
+            <div className="reg_info">
+              <div className="logo_image">
+                <img
+                  src={isLoginView ? Profile : Profile2}
+                  alt="Logo"
+                  className="logo"
+                />
+              </div>
+              <div className="reg_texts">
+                <h2 className="reg_name">
+                  {isLoginView ? "Jane Kitani" : "Joe Kitanoe"}
+                </h2>
+                <p className="reg_text">
+                  {isLoginView ? "Graphic Designer" : "Software Developer"}
+                </p>
+              </div>
             </div>
-            <div className="reg_texts">
-              <h2 className="reg_name">
-                {isLoginView ? "Jane Kitani" : "Joe Kitanoe"}
-              </h2>
-              <p className="reg_text">
-                {isLoginView ? "Graphic Designer" : "Software Developer"}
-              </p>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
 
         <div className="login_registration_form">
           <div className="logo_image">
@@ -92,104 +142,131 @@ const Login = ({ email, password, onClose }: FormData) => {
           <p className="login_head">
             Join us and get more benefits. We promise to keep your data safely.
           </p>
-          {isLoginView ? (
-            <div className="login_container">
-              <div className="email">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="email_input"
-                  value={email}
-                  {...register("email")}
-                />
-                <div className="icon">
-                  <MdMailOutline />
-                </div>
-              </div>
-              <div className="password">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="password_input"
-                  value={password}
-                  {...register("password")}
-                />
-                <div className="icon" onClick={passwordVisibility}>
-                  {showPassword ? <IoMdUnlock /> : <IoMdLock />}
-                </div>
-              </div>
-              <button id="log_in">Login</button>
-              <p className="choose_question">or you can</p>
-              <button className="facebook_account">
-                <img src={Facebook} alt="Facebook" /> Continue with Facebook
-              </button>
-              <button className="apple_account">
-                <img src={Apple} alt="Apple" />
-                Continue with Apple
-              </button>
-              <button className="google_account">
-                <img src={Google} alt="Google" />
-                Continue with Google
-              </button>
-              <div className="account_question">
-                <p className="question">Need an Account?</p>
-                <button
-                  className={`sign_up ${isLoginView ? "active" : ""}`}
-                  onClick={() => setIsLoginView(false)}
-                  onSubmit={handleSubmit(submitData)}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <AnimatePresence mode="wait">
+              {isLoginView ? (
+                <motion.div
+                  className="login_container"
+                  key="login"
+                  variants={loginVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
                 >
-                  Sign Up
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="registration_container">
-              <button className="facebook_account">
-                <img src={Facebook} alt="Facebook" /> Sign Up with Facebook
-              </button>
-              <button className="apple_account">
-                <img src={Apple} alt="Apple" />
-                Sign Up with Apple
-              </button>
-              <button className="google_account">
-                <img src={Google} alt="Google" />
-                Sign Up with Google
-              </button>
-              <p className="choose_question">or you can</p>
-              <div className="email">
-                <input
-                  type="email"
-                  placeholder="Enter Your Email"
-                  className="email_input"
-                  value={email}
-                />
-                <div className="icon">
-                  <MdMailOutline />
-                </div>
-              </div>
-              <div className="password">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="Password"
-                  className="password_input"
-                  value={password}
-                />
-                <div className="icon" onClick={passwordVisibility}>
-                  {showPassword ? <IoMdUnlock /> : <IoMdLock />}
-                </div>
-              </div>
-              <button id="creat_account">Creat Account</button>
-              <div className="account_question">
-                <p className="question">Already have an Account?</p>
-                <button
-                  className="sign_up"
-                  onClick={() => setIsLoginView(true)}
+                  <div className="email">
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className={`email_input ${
+                        errors.email ? "error_border" : ""
+                      }`}
+                      {...register("email")}
+                    />
+                    <div className="icon">
+                      <MdMailOutline />
+                    </div>
+                    {/* {errors.email && <p className="error">{errors.email.message}</p>} */}
+                  </div>
+                  <div className="password">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Password"
+                      className={`password_input ${
+                        errors.password ? "error_border" : ""
+                      }`}
+                      {...register("password")}
+                    />
+                    <div className="icon" onClick={passwordVisibility}>
+                      {showPassword ? <IoMdUnlock /> : <IoMdLock />}
+                    </div>
+                  </div>
+                  <button id="log_in">Login</button>
+                  <p className="choose_question">or you can</p>
+                  <button className="facebook_account">
+                    <img src={Facebook} alt="Facebook" /> Continue with Facebook
+                  </button>
+                  <button className="apple_account">
+                    <img src={Apple} alt="Apple" />
+                    Continue with Apple
+                  </button>
+                  <button className="google_account">
+                    <img src={Google} alt="Google" />
+                    Continue with Google
+                  </button>
+                  <div className="account_question">
+                    <p className="question">Need an Account?</p>
+                    <button
+                      className={`sign_up ${isLoginView ? "active" : ""}`}
+                      type="button"
+                      onClick={() => setIsLoginView(false)}
+                      // onSubmit={handleSubmit(submitData)}
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  className="registration_container"
+                  key="register"
+                  variants={registerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
                 >
-                  Login
-                </button>
-              </div>
-            </div>
-          )}
+                  <button className="facebook_account">
+                    <img src={Facebook} alt="Facebook" /> Sign Up with Facebook
+                  </button>
+                  <button className="apple_account">
+                    <img src={Apple} alt="Apple" />
+                    Sign Up with Apple
+                  </button>
+                  <button className="google_account">
+                    <img src={Google} alt="Google" />
+                    Sign Up with Google
+                  </button>
+                  <p className="choose_question">or you can</p>
+                  <div className="email">
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className={`email_input ${
+                        errors.email ? "error_border" : ""
+                      }`}
+                      {...register("email")}
+                    />
+                    <div className="icon">
+                      <MdMailOutline />
+                    </div>
+                  </div>
+                  <div className="password">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Password"
+                      className={`password_input ${
+                        errors.password ? "error_border" : ""
+                      }`}
+                      {...register("password")}
+                    />
+                    <div className="icon" onClick={passwordVisibility}>
+                      {showPassword ? <IoMdUnlock /> : <IoMdLock />}
+                    </div>
+                  </div>
+                  <button id="creat_account">Creat Account</button>
+                  <div className="account_question">
+                    <p className="question">Already have an Account?</p>
+                    <button
+                      className="sign_up"
+                      type="button"
+                      onClick={() => setIsLoginView(true)}
+                    >
+                      Login
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </form>
         </div>
       </div>
     </div>
