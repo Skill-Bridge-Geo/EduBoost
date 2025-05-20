@@ -15,7 +15,6 @@ export default function Video() {
   const [currentVideo, setCurrentVideo] = useState<string>("");
   const [timeLeft, setTimeLeft] = useState<number>(0);
 
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -122,17 +121,14 @@ export default function Video() {
           )}
         </section>
       </div>
-      <section
-        
-        className='second-section'
-      >
-        <div className="scroll-options">
+      <section className='second-section'>
+        <div className='scroll-options'>
           <div className='about-desktop'>
-            <h2 className="info-title">About Course</h2>
+            <h2 className='info-title'>About Course</h2>
             <About />
           </div>
           <div className='review-desktop'>
-            <h2 className="info-title">Review</h2>
+            <h2 className='info-title'>Review</h2>
             <Review />
           </div>
         </div>
