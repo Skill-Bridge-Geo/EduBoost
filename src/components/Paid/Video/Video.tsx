@@ -32,11 +32,11 @@ export default function Video() {
 
   return (
     <div className='main'>
+      <div className='header'>
+        <Header />
+      </div>
       <div className='parent'>
         <section className='first-child'>
-          <div className='header'>
-            <Header />
-          </div>
           <div className='video-container'>
             <VideoPlayer
               currentVideo={currentVideo}
