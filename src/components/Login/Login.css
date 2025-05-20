@@ -26,6 +26,7 @@
   background-color: #ffffff;
   border-radius: 8px;
   margin: 40px auto;
+  overflow: hidden;
 }
 .login_registration_container .login_registration .image_container {
   position: relative;
@@ -328,4 +329,7 @@
   .login_registration_form #creat_account {
     background-color: #c42a22;
   }
+}
+.error_border{
+  border: 1px solid red !important;
 }
