@@ -36,6 +36,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  cursor: pointer;
 }
 
 .logo-icon {
