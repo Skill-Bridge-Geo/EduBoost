@@ -261,4 +261,8 @@
     .parent {
     padding: 40px 120px 80px;
   }
+  .video {
+    min-width: 500px;
+    min-height: 365px;
+  }
 }
