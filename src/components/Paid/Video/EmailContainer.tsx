@@ -1,15 +1,28 @@
 import searchIcon from "../../../assets/SearchIcon.svg";
+import  "./email.css"
 
 export default function () {
   return (
     <div className='email-container'>
-      <div>
-        <h2>Join and get amazing discount</h2>
-        <p>With our responsive themes and mobile and desktop apps</p>
+      <div className='email-text-div'>
+        <h2 className='email-header'>
+          Join and get amazing discount
+        </h2>
+        <p className='email-description'>
+          With our responsive themes and mobile and desktop apps
+        </p>
       </div>
-      <div>
-        <input className='email' type='text' />
-        <img className="search-icon" src={searchIcon} alt='search icon' />
+      <div className='email-input-container'>
+        <input
+          className='email'
+          placeholder='Email Address'
+          type='text'
+        />
+        <img
+          className='search-icon'
+          src={searchIcon}
+          alt='search icon'
+        />
       </div>
     </div>
   );
