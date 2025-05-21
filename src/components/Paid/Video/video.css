@@ -193,13 +193,13 @@
   .main {
     display: flex;
     flex-direction: column;
+    padding: 60px 60px 24px;
   }
   .parent {
     display: flex;
     flex-direction: row;
     gap: 22px;
     justify-content: center;
-    padding: 60px 60px 24px;
   }
   .info-title {
     padding-bottom: 10px;
@@ -257,8 +257,8 @@
     animation: none;
   }
 }
-@media (min-width:1024px) {
-    .parent {
+@media (min-width: 1024px) {
+  .main {
     padding: 40px 120px 80px;
   }
   .video {
