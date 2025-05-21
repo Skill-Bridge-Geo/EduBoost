@@ -8,6 +8,8 @@ import checkedIcon from "../../../assets/checked.svg";
 import signedIcon from "../../../assets/signed.svg";
 import Header from "../../Header/Header";
 import Questions from "../Questions/Questions";
+import EmailContainer from "./EmailContainer";
+
 
 export default function Video() {
   const { data } = useFetchPaidData();
@@ -142,6 +144,7 @@ export default function Video() {
           )}
         </section>
       </div>
+     <EmailContainer />
     </div>
   );
 }
