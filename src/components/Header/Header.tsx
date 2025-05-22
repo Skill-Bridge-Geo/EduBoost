@@ -7,8 +7,8 @@ import notifications from "../../assets/icon-notifications.svg";
 import search from "../../assets/icon-search.svg";
 import arrow from "../../assets/icon-arrow.svg";
 import avatar from "../../assets/avatar.png";
-import Login from "../Login/Login";
 import iconSignUp from "../../assets/icon-sign-up.svg";
+import LoginRegistration from "../LoginRegistration/LoginRegistration";
 
 export default function Header() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -62,7 +62,7 @@ export default function Header() {
             {isLoginOpen && (
               <div className="login_modal_overlay">
                 {/* <Login/> */}
-                <Login onClose={() => setIsLoginOpen(false)} />
+                <LoginRegistration onClose={() => setIsLoginOpen(false)} />
               </div>
             )}
             <button className="sign-up-button">
