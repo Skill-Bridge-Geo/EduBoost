@@ -10,10 +10,6 @@ export const registerUser = async (req, res) => {
   if (!email || !password) {
     return res.status(400).json({ message: 'All info are required' })
   }
-  // If password length isn't required length, it will show this message  
-  if (password.length < 8 || password.length > 16) {
-    return res.status(400).json({ message: 'Password must be between 8 and 16 characters!' })
-  }
   // Searching existing user in database and adding with hashed password
   try {
     const existingUser = await UserSchema.findOne({ email })
@@ -25,7 +21,7 @@ export const registerUser = async (req, res) => {
     const newUser = new UserSchema({ email, password: hashedPassword })
 
     await newUser.save()
-
+    // Remove password from the user object before sending the response
     const userWithoutPassword = {
       ...newUser.toObject(),
       password: undefined,
