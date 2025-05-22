@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import Image1 from "../../assets/registration/reg-img1.png";
 import Image2 from "../../assets/registration/reg-img2.png";
 import Profile from "../../assets/registration/profile.svg";
@@ -20,12 +19,6 @@ type Props = {
 const LoginRegistration = ({ onClose }: Props) => {
   const [isLoginView, setIsLoginView] = useState<boolean>(true);
 
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = (data: unknown) => {
-    console.log(isLoginView ? "Logging in:" : "Signing up:", data);
-    reset();
-  };
 
   const imageVariants = {
     hidden: {

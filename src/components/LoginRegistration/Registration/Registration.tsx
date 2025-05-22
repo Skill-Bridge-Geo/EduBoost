@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -18,7 +18,7 @@ type RegistrationProps = {
   onSwitchToLogin: () => void;
 };
 const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
-  const [isLoginView, setIsLoginView] = useState<boolean>(true);
+  const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const userSchema: ZodType<FormData> = z.object({
