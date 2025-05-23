@@ -63,4 +63,9 @@
   padding: 10px 18px;
   border-radius: 5px;
   cursor: pointer;
+  letter-spacing: 0.7px;
+}
+.subscribe:hover {
+    background-color: rgb(234, 101, 101);
+    color: rgb(58, 56, 56);
 }
