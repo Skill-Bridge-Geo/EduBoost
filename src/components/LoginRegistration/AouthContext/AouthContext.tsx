@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import { loginUser, registrationUser, userProfile } from "../Api/userApi";
 
 interface User {
@@ -24,7 +30,9 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(() => localStorage.getItem("token"));
+  const [token, setToken] = useState<string | null>(() =>
+    localStorage.getItem("token")
+  );
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -80,7 +88,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, register, logout, loading }}>
+    <AuthContext.Provider
+      value={{ user, token, login, register, logout, loading }}
+    >
       {children}
     </AuthContext.Provider>
   );

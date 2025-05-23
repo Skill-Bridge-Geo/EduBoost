@@ -8,6 +8,7 @@ import Google from "../../../assets/registration/Google.svg";
 import { MdMailOutline } from "react-icons/md";
 import { IoMdLock, IoMdUnlock } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAuth } from "../AouthContext/AouthContext";
 import "./Registration.css";
 
 type FormData = {
@@ -20,6 +21,7 @@ type RegistrationProps = {
 const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
   const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const { register: registerUser } = useAuth();
 
   const userSchema: ZodType<FormData> = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -38,9 +40,16 @@ const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
   } = useForm<FormData>({
     resolver: zodResolver(userSchema),
   });
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     console.log(isLoginView ? "Logging in:" : "Signing up:", data);
-    reset();
+    // reset();
+    try {
+      await registerUser(data);
+      console.log("Successfully registered:", data);
+      reset();
+    } catch (error) {
+      console.error("Registration failed:", error);
+    }
   };
   const registerVariants = {
     hidden: { opacity: 0, y: 100 },
