@@ -25,7 +25,7 @@ export default function () {
             alt='search icon'
           />
         </div>
-        <button className='subscribe'>Subscrine</button>
+        <button className='subscribe'>Subscribe</button>
       </div>
     </div>
   );
