@@ -142,7 +142,7 @@
     .banner-content2{
         right: 24px;
         bottom: 46px;
-        width: 480px;
+        width: 430px;
         display: flex;
         justify-content: space-between;
         align-items: end;
@@ -211,13 +211,14 @@
         border-radius: 50%;
     }
 }
-
 @media only screen and (min-width: 1024px){
     .parent-banner{
         padding: 0;
     }
+    .banner-content2{
+        width: 480px;
+    }
 }
-
 @media only screen and (min-width: 1440px){
     .banner{
         padding-bottom: 77px;
