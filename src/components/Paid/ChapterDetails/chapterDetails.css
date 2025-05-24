@@ -30,33 +30,33 @@
   padding: 4px;
 }
 .statusPlaying {
-  background-color: #FE416D;
+  background-color: #fe416d;
   color: white;
   font-size: 1rem;
   padding: 4px;
 }
 .play {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .play-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .durationCompleted {
-    color: #00DDC0;
+  color: #00ddc0;
 }
 .durationPlaying {
-    color: red;
+  color: red;
 }
 .durationLocked {
-    color: gray;
+  color: gray;
 }
 .playIcon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .isCurrent {
@@ -65,7 +65,7 @@
 }
 
 .isCurrent::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 10%;
