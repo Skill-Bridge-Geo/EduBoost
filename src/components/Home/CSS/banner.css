@@ -81,11 +81,12 @@
     display: none;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     .parent-banner{
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 10px;
     }
     .banner{
         height: 400px;
@@ -208,6 +209,12 @@
         height: 4px;
         background-color: #1B1B1B1A;
         border-radius: 50%;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .parent-banner{
+        padding: 0;
     }
 }
 

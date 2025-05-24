@@ -55,12 +55,12 @@
     cursor: pointer;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     .show-list{
         grid-row: 2/3;
         height: 37px;
         border-top: none;
-        padding: 0;
+        padding: 0 16px;
         gap: 8px;
     }
     .tablet-span{
@@ -82,6 +82,12 @@
     }
     .inactive{
         border-color: #1B1B1B1A;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .show-list{
+        padding: 0;
     }
 }
 

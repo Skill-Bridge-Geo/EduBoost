@@ -91,17 +91,17 @@
     display: none;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     .parent-webinar{
         display: none;
     }
 
     .subscription{
         overflow: hidden;
-        margin: 0 5px 80px;
+        margin: 0 auto 80px;
         padding: 0 32px;
         display: flex;
-        width: 100%;
+        width: calc(100% - 32px);
         height: 184px;
         border-radius: 12px;
         background-color: #2273D1;
@@ -180,6 +180,13 @@
         left: 255px;
         top: 50%;
         transform: translateY(-50%);
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .subscription{
+        width: calc(100% - 5px);
+        margin: 0 0 80px 5px;
     }
 }
 
