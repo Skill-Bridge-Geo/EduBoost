@@ -31,7 +31,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(() =>
-    localStorage.getItem("token")
+    localStorage.getItem("accessToken")
   );
   const [loading, setLoading] = useState(false);
 
@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(true);
       const data = await registrationUser(form);
       const accessToken = data.accessToken;
-      localStorage.setItem("token", accessToken);
+      localStorage.setItem("accessToken", accessToken);
       setToken(accessToken);
     } catch (err) {
       throw err;

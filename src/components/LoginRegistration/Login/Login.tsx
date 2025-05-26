@@ -9,6 +9,7 @@ import { MdMailOutline } from "react-icons/md";
 import { IoMdLock, IoMdUnlock } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../AouthContext/AouthContext";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 type FormData = {
@@ -22,6 +23,7 @@ const Login = ({ onSwitchToSignup }: LoginProps) => {
   const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { login: loginUser } = useAuth();
+    const navigate = useNavigate();
 
   const passwordVisibility = () => {
     setShowPassword(!showPassword);
@@ -48,6 +50,7 @@ const Login = ({ onSwitchToSignup }: LoginProps) => {
     // reset();
     try {
       await loginUser(data);
+      navigate("/Profile");
       console.log("Successfully registered:", data);
       reset();
     } catch (error) {
