@@ -91,17 +91,17 @@
     display: none;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     .parent-webinar{
         display: none;
     }
 
     .subscription{
         overflow: hidden;
-        margin: 0 5px 80px;
+        margin: 0 auto 80px;
         padding: 0 32px;
         display: flex;
-        width: 100%;
+        width: calc(100% - 32px);
         height: 184px;
         border-radius: 12px;
         background-color: #2273D1;
@@ -120,9 +120,9 @@
     }
     .sub-font{
         width: 100%;
-        max-width: 390px;
+        max-width: 320px;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 26px;
         line-height: 42px;
         color: #FFFFFF;
     }
@@ -137,7 +137,7 @@
         position: relative;
     }
     .email-area input{
-        width: 289px;
+        width: 265px;
         height: 100%;
         padding-left: 12px;
         border-radius: 3px;
@@ -177,9 +177,26 @@
         color: #FFFFFF;
         font-size: 22px;
         position: absolute;
-        left: 255px;
+        left: 231px;
         top: 50%;
         transform: translateY(-50%);
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .subscription{
+        width: calc(100% - 5px);
+        margin: 0 0 80px 5px;
+    }
+    .sub-font{
+        max-width: 390px;
+        font-size: 32px;
+    }
+    .email-area input{
+        width: 289px;
+    }
+    .search-icon{
+        left: 255px;
     }
 }
 

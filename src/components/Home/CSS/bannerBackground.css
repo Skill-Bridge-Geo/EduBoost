@@ -28,7 +28,7 @@
     display: none;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     #banner-image{
         width: 658px;
         z-index: -1;

@@ -43,9 +43,9 @@
     color: #1B1B1B99;
 }
 
-@media only screen and (min-width: 1024px){
+@media only screen and (min-width: 768px){
     .single-instructor{
-        width: 288px;
+        width: 240px;
         position: relative;
     }
     .image-container{
@@ -77,6 +77,12 @@
         line-height: 24px;
         text-align: center;
         color: #FFFFFF;
+    }
+}
+
+@media only screen and (min-width: 900px){
+    .single-instructor{
+        width: 288px;
     }
 }
 

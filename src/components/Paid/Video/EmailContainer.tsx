@@ -12,17 +12,20 @@ export default function () {
           With our responsive themes and mobile and desktop apps
         </p>
       </div>
-      <div className='email-input-container'>
-        <input
-          className='email'
-          placeholder='Email Address'
-          type='text'
-        />
-        <img
-          className='search-icon'
-          src={searchIcon}
-          alt='search icon'
-        />
+      <div className='email-subscribe-wrapper'>
+        <div className='email-input-container'>
+          <input
+            className='email'
+            placeholder='Email Address'
+            type='text'
+          />
+          <img
+            className='search-icon'
+            src={searchIcon}
+            alt='search icon'
+          />
+        </div>
+        <button className='subscribe'>Subscribe</button>
       </div>
     </div>
   );
