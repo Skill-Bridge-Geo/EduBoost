@@ -51,7 +51,7 @@ const Login = ({ onSwitchToSignup }: LoginProps) => {
     try {
       await loginUser(data);
       navigate("/Profile");
-      console.log("Successfully registered:", data);
+      console.log("Successfully logged in:", data);
       reset();
     } catch (error) {
       console.error("Registration failed:", error);

@@ -1,0 +1,116 @@
+.user_profile_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 41px;
+}
+.user_profile_container .my_account {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0%;
+}
+.user_profile_container .profile_navigation .navigation_settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  max-width: 665px;
+}
+.user_profile_container .profile_navigation .navigation_settings .stng {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #000000;
+  cursor: pointer;
+}
+/* .user_profile_container .profile_navigation .navigation_settings .stng a{
+    text-decoration: none;
+    color: #000000;
+  } */
+.user_profile_container .prifile_photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  margin: 40px 0px 32px 0px;
+}
+.user_profile_container .user_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 587px;
+}
+.user_profile_container .user_profile .input_cont,
+.select_cont {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #1b1b1b1a;
+  margin: 16px 0px;
+}
+.user_profile_container .user_profile .input_cont input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #1b1b1be5;
+}
+.user_profile_container .user_profile .input_cont label {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: #1b1b1b99;
+}
+.user_profile_container .user_profile .input_cont input:focus ~ label {
+  top: -5px;
+}
+.user_profile_container .user_profile .select_cont select {
+  width: 100%;
+  margin-bottom: 16px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #1b1b1be5;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-top: 5px;
+}
+.user_profile_container .user_profile .select_cont select option {
+  background: none;
+}
+.user_profile_container .user_profile #save {
+  width: 179px;
+  height: 41px;
+  margin: 54px 0px 124px 0px;
+  border-radius: 14px;
+  padding: 10px 18px 10px 18px;
+  background: #3dcbb1;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  color: #ffffff;
+  cursor: pointer;
+}

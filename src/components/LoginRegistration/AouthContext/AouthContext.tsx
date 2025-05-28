@@ -57,10 +57,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const register = async (form: RegisterForm) => {
     try {
       setLoading(true);
-      const data = await registrationUser(form);
-      const accessToken = data.accessToken;
-      localStorage.setItem("accessToken", accessToken);
-      setToken(accessToken);
+      const authUser = await registrationUser(form);
+      // const accessToken = data.accessToken;
+      localStorage.setItem("accessToken", authUser.user.accessToken);
+      setToken(authUser.user.accessToken);
     } catch (err) {
       throw err;
     } finally {
@@ -72,7 +72,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       setLoading(true);
       const accessToken = await loginUser(form);
-      localStorage.setItem("token", accessToken);
+      localStorage.setItem("accessToken", accessToken);
       setToken(accessToken);
     } catch (err) {
       throw err;
@@ -82,7 +82,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
     setToken(null);
     setUser(null);
   };

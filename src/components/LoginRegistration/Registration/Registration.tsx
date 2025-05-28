@@ -21,7 +21,7 @@ type RegistrationProps = {
 const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
   const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const { register: registerUser } = useAuth();
+  const { register: registrationUser } = useAuth();
 
   const userSchema: ZodType<FormData> = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -44,7 +44,7 @@ const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
     console.log(isLoginView ? "Logging in:" : "Signing up:", data);
     // reset();
     try {
-      await registerUser(data);
+      await registrationUser(data);
       console.log("Successfully registered:", data);
       reset();
     } catch (error) {
