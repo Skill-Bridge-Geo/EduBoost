@@ -1,10 +1,11 @@
 import { useAuth } from "../LoginRegistration/AouthContext/AouthContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Pfp from "./ProfilePicture/Pfp";
 import "./Profile.css";
 
 const Profile = () => {
-  const [activeTab, setActiveTab] = useState("personalisation");
+  const [activeTab, setActiveTab] = useState<string>("personalisation");
   const { logout } = useAuth();
   const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ const Profile = () => {
         <ul className="navigation_settings">
           <li
             className={`stng personalisation ${
-              activeTab === "personalisation" ? "active" : ""
+              activeTab === "personalisation" ? "active_underline" : ""
             }`}
             onClick={() => setActiveTab("personalisation")}
           >
@@ -28,7 +29,7 @@ const Profile = () => {
           </li>
           <li
             className={`stng account ${
-              activeTab === "account" ? "active" : ""
+              activeTab === "account" ? "active_underline" : ""
             }`}
             onClick={() => setActiveTab("account")}
           >
@@ -36,17 +37,33 @@ const Profile = () => {
           </li>
           <li
             className={`stng payment ${
-              activeTab === "payment" ? "active" : ""
+              activeTab === "payment" ? "active_underline" : ""
             }`}
             onClick={() => setActiveTab("payment")}
           >
             Payment Methods
           </li>
-          <li className="stng notifications">Notifications</li>
-          <li className="stng privacy">Privacy</li>
+          <li
+            className={`stng notifications ${
+              activeTab === "notifications" ? "active_underline" : ""
+            }`}
+            onClick={() => setActiveTab("notifications")}
+          >
+            Notifications
+          </li>
+          <li
+            className={`stng privacy ${
+              activeTab === "privacy" ? "active_underline" : ""
+            }`}
+            onClick={() => setActiveTab("privacy")}
+          >
+            Privacy
+          </li>
         </ul>
       </nav>
-      <div className="prifile_photo"></div>
+      <div className="prifile_photo">
+        <Pfp />
+      </div>
       <form action="user_profile" className="user_profile">
         <div className="input_cont">
           <input type="text" name="first_name" />

@@ -13,15 +13,20 @@
   line-height: 26px;
   letter-spacing: 0%;
 }
+.user_profile_container .profile_navigation {
+  width: 100%;
+  max-width: 665px;
+}
 .user_profile_container .profile_navigation .navigation_settings {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 32px;
   list-style: none;
-  max-width: 665px;
 }
 .user_profile_container .profile_navigation .navigation_settings .stng {
+  position: relative;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -29,15 +34,26 @@
   color: #000000;
   cursor: pointer;
 }
+.navigation_settings .stng::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #3dcbb1;
+  transition: width 0.4s ease;
+  transform-origin: center;
+}
+.navigation_settings .stng.active_underline::after {
+  width: 100%;
+}
 /* .user_profile_container .profile_navigation .navigation_settings .stng a{
     text-decoration: none;
     color: #000000;
   } */
 .user_profile_container .prifile_photo {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: blueviolet;
   margin: 40px 0px 32px 0px;
 }
 .user_profile_container .user_profile {
@@ -70,7 +86,6 @@
   top: 50%;
   left: 0px;
   transform: translateY(-50%);
-  font-size: 1rem;
   pointer-events: none;
   transition: 0.5s;
   font-weight: 400;
@@ -81,6 +96,13 @@
 }
 .user_profile_container .user_profile .input_cont input:focus ~ label {
   top: -5px;
+}
+.user_profile_container .user_profile .select_cont label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  color: #1b1b1b99;
 }
 .user_profile_container .user_profile .select_cont select {
   width: 100%;
