@@ -4,6 +4,8 @@ import { useState } from "react";
 import Pfp from "./ProfilePicture/Pfp";
 import "./Profile.css";
 
+// USER PROFILE
+
 const Profile = () => {
   const [activeTab, setActiveTab] = useState<string>("personalisation");
   const { logout } = useAuth();
