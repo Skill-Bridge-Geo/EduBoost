@@ -9,6 +9,7 @@ import { MdMailOutline } from "react-icons/md";
 import { IoMdLock, IoMdUnlock } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../AouthContext/AouthContext";
+import { useNavigate } from "react-router-dom";
 import "./Registration.css";
 
 type FormData = {
@@ -22,6 +23,7 @@ const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
   const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { register: registrationUser } = useAuth();
+  const navigate = useNavigate();
 
   const userSchema: ZodType<FormData> = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -45,6 +47,7 @@ const Registration = ({ onSwitchToLogin }: RegistrationProps) => {
     // reset();
     try {
       await registrationUser(data);
+      navigate("/Profile");
       console.log("Successfully registered:", data);
       reset();
     } catch (error) {

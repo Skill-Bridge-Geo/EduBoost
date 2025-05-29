@@ -14,11 +14,11 @@ import "./LoginRegistration.css";
 
 type Props = {
   onClose?: () => void;
+  onLoginSuccess?: () => void;
 };
 
-const LoginRegistration = ({ onClose }: Props) => {
+const LoginRegistration = ({ onClose, onLoginSuccess }: Props) => {
   const [isLoginView, setIsLoginView] = useState<boolean>(true);
-
 
   const imageVariants = {
     hidden: {
@@ -98,17 +98,18 @@ const LoginRegistration = ({ onClose }: Props) => {
           <p className="login_head">
             Join us and get more benefits. We promise to keep your data safely.
           </p>
-            {isLoginView ? (
-              <Login
-                key="login"
-                onSwitchToSignup={() => setIsLoginView(false)}
-              />
-            ) : (
-              <Registration
-                key="registration"
-                onSwitchToLogin={() => setIsLoginView(true)}
-              />
-            )}
+          {isLoginView ? (
+            <Login
+              key="login"
+              onSwitchToSignup={() => setIsLoginView(false)}
+              onLoginSuccess={onLoginSuccess}
+            />
+          ) : (
+            <Registration
+              key="registration"
+              onSwitchToLogin={() => setIsLoginView(true)}
+            />
+          )}
         </div>
       </div>
     </div>

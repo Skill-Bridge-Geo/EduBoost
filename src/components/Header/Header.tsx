@@ -12,7 +12,7 @@ import LoginRegistration from "../LoginRegistration/LoginRegistration";
 
 export default function Header() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleLogin = () => {
     setIsLoginOpen(!isLoginOpen);
@@ -62,7 +62,13 @@ export default function Header() {
             {isLoginOpen && (
               <div className="login_modal_overlay">
                 {/* <Login/> */}
-                <LoginRegistration onClose={() => setIsLoginOpen(false)} />
+                <LoginRegistration
+                  onClose={() => setIsLoginOpen(false)}
+                  onLoginSuccess={() => {
+                    setIsLoggedIn(true);
+                    setIsLoginOpen(false);
+                  }}
+                />
               </div>
             )}
             <button className="sign-up-button">
