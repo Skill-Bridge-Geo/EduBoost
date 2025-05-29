@@ -9,6 +9,7 @@ const Pfp = () => {
   const addImage = () => {
     inputRef.current?.click();
   };
+  
   const changeImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
