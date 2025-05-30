@@ -1,0 +1,38 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+.arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media only screen and (min-width: 1140px) {
+  .Container {
+    width: 895px;
+    display: flex;
+  }
+  button.dropdownButton {
+    background-color: #ffffff;
+    width: 183px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 42px;
+    border: 1px solid rgba(27, 27, 27, 0.6);
+    border-radius: 3px;
+  }
+}
