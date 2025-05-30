@@ -18,12 +18,13 @@ type FormData = {
 };
 type LoginProps = {
   onSwitchToSignup: () => void;
+  onLoginSuccess?: () => void;
 };
-const Login = ({ onSwitchToSignup }: LoginProps) => {
+const Login = ({ onSwitchToSignup, onLoginSuccess }: LoginProps) => {
   const [isLoginView] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const { login: loginUser } = useAuth();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const passwordVisibility = () => {
     setShowPassword(!showPassword);
@@ -40,8 +41,8 @@ const Login = ({ onSwitchToSignup }: LoginProps) => {
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      email: '',
-      password: ''
+      email: "",
+      password: "",
     },
     resolver: zodResolver(userSchema),
   });
@@ -53,6 +54,7 @@ const Login = ({ onSwitchToSignup }: LoginProps) => {
       navigate("/Profile");
       console.log("Successfully logged in:", data);
       reset();
+      onLoginSuccess?.();
     } catch (error) {
       console.error("Registration failed:", error);
     }

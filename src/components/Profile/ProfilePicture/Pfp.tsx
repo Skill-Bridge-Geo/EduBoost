@@ -3,6 +3,8 @@ import Profile_picture from "../../../assets/registration/pfp.svg";
 import Add_picture from "../../../assets/registration/addphoto.png";
 import "./Pfp.css";
 
+// PROFILE PICTURE CHENGE
+
 const Pfp = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [avatar, setAvatar] = useState<File | null>(null);
