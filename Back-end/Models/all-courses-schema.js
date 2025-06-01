@@ -11,7 +11,9 @@ const allCourseSchema = new mongoose.Schema({
   reviewCount: { type: Number, required: true }, // e.g., 1.2k
   imageUrl: { type: String, required: true }, // course banner image
   tag: { type: String, required: true }, // e.g., "Best Seller"
-  discountPercent: { type: Number, required: true } // e.g., 20
+  discountPercent: { type: Number, required: true }, // e.g., 20
+  isTrending: { type: Boolean, default: false }, // new field to flag trending courses
+  category: { type: String, required: true } // e.g., "Frontend", "Backend", "Design", etc.
 }, { timestamps: true })
 
 const allCourses = mongoose.model('all-coursers', allCourseSchema)
