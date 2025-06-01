@@ -19,3 +19,21 @@ export interface Instructor{
     position: string;
     imgURL: string;
 }
+
+export interface Cart1{
+    _id: string;
+    title: string;
+    instructor: string;
+    description: string;
+    rating: number;
+    reviewCount: number;
+    priceOriginal: string;
+    priceDiscounted: string;
+    discountPercent: number;
+    imageUrl: string;
+    __v: number;
+    tag: string;
+    studioName: string;
+    createdAt: string;
+    updatedAt: string;
+}
