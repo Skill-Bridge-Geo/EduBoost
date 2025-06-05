@@ -14,7 +14,7 @@ import { deleteInstructorById } from '../Controllers/homepage-controller.js'
 const homePageRouter = express.Router()
 
 // courses methods
-homePageRouter.post('/', homePageController)
+homePageRouter.post('/', homePageController) // Debugging controller
 homePageRouter.post('/allStudio', allStudiosCourses )
 homePageRouter.post('/addToStudio', addCourse )
 homePageRouter.put('/updateCourse/:id', updateCourseById)
