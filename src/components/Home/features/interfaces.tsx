@@ -1,26 +1,26 @@
+// export interface CartOld{
+//     id: number;
+//     title: string;
+//     instructor: string;
+//     text: string;
+//     rate: number;
+//     reviews: string;
+//     oldPrice: string;
+//     newPrice: string;
+//     discount: number;
+//     imgURL: string;
+//     category: string;
+//     isTrending: boolean;
+// }
+
+// export interface InstructorOld{
+//     id: number;
+//     name: string;
+//     position: string;
+//     imgURL: string;
+// }
+
 export interface Cart{
-    id: number;
-    title: string;
-    instructor: string;
-    text: string;
-    rate: number;
-    reviews: string;
-    oldPrice: string;
-    newPrice: string;
-    discount: number;
-    imgURL: string;
-    category: string;
-    isTrending: boolean;
-}
-
-export interface Instructor{
-    id: number;
-    name: string;
-    position: string;
-    imgURL: string;
-}
-
-export interface Cart1{
     _id: string;
     title: string;
     instructor: string;
@@ -36,4 +36,14 @@ export interface Cart1{
     studioName: string;
     createdAt: string;
     updatedAt: string;
+    category: string;
+    isTrending: boolean;
+}
+
+export interface Instructor{
+    _id: string;
+    name: string;
+    position: string;
+    imageUrl: string;
+    _v: number;
 }
