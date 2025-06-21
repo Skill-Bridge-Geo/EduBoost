@@ -27,8 +27,8 @@ export interface Cart1{
     description: string;
     rating: number;
     reviewCount: number;
-    priceOriginal: string;
-    priceDiscounted: string;
+    priceOriginal: number;
+    priceDiscounted: number;
     discountPercent: number;
     imageUrl: string;
     __v: number;

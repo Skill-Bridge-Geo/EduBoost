@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const instructorSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  title: { type: String, required: true },
+  position: { type: String, required: true },
   imageUrl: { type: String, required: true }
 })
 

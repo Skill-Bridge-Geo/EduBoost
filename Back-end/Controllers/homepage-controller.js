@@ -1,6 +1,7 @@
 import allCourseSchema from "../Models/all-courses-schema.js" // kitani studio courses schema
 import Instructor from '../Models/instructor-schema.js' // Popular instructors schema
 
+// debugging controller
 export const homePageController = async (req, res) => {
     console.log('Home Page Controller is working')
 }
@@ -79,13 +80,14 @@ export const allInstructorData = async (req, res) => {
 
 export const addInstructors = async (req, res) => {
   try {
-    /* Add instructor in database */
-    const instructors = await Instructor.insertMany(req.body)
-    res.status(201).json({ message: 'Instructors added', data: instructors })
+    const instructor = new Instructor(req.body)
+    await instructor.save()
+    res.status(201).json({ message: 'Instructor added', data: instructor })
   } catch (error) {
-    res.status(400).json({ error: 'Failed to add instructors', details: error.message })
+    res.status(400).json({ error: 'Failed to add instructor', details: error.message })
   }
 }
+
 
 export const updateInstructorById = async (req, res) => {
   try {
