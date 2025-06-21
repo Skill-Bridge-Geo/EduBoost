@@ -1,10 +1,10 @@
-import { Cart1 } from "../../../components/Home/features/interfaces";
+import { Cart } from "../../../components/Home/features/interfaces";
 import "../CSS/cart.css"
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { MdOutlinePersonOutline } from "react-icons/md";
 
 const SingleCart: React.FC<{
-    myCart: Cart1;
+    myCart: Cart;
 }> = ({myCart}) => {
     return ( 
         <div className="single-cart">

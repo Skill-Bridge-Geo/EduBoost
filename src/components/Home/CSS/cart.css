@@ -11,10 +11,15 @@
 /* cart placeholder start */
 .image{
     position: relative;
+    width: 100%;
+    height: 161px;
+    overflow: hidden;
+    border-radius: 3px;
 }
 .placeholder-img{
     width: 100%;
-    border-radius: 3px;
+    height: 100%;
+    object-fit: cover;
 }
 .person-icon{
     position: absolute;
@@ -127,6 +132,9 @@
     .single-cart{
         width: 230px;
     }
+    .image{
+        height: 129.94px;
+    }
 
     /* cart placeholder start */
     .placeholder-img{
@@ -179,17 +187,26 @@
     .single-cart{
         width: 260px;
     }
+    .image{
+        height: 146.88px;
+    }
 }
 
 @media only screen and (min-width: 900px){
     .single-cart{
         width: 270px;
     }
+    .image{
+        height: 152.53px;
+    }
 }
 
 @media only screen and (min-width: 1024px){
     .single-cart{
         width: 285px;
+    }
+    .image{
+        height: 161px;
     }
 }
 
